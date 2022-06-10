@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">Welcome to KW Travelogue!</h1>
+                <p class="lead mb-0">A site to share your travel experiences</p>
+            </div>
+        </div>
+    </header>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-8">
+                <!-- Nested row for blog posts-->
+                <div class="row">
+                    {% for post in post_list %}
+                        <div class="col-lg-6">
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+
+                                {% if "placeholder" in post.featured_image.url %}
+                                    <a href="{% url 'post_detail' post.id %}">
+                                        <img class="card-img-top"
+                                            src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="Defalut Travelogue Image">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'post_detail' post.id %}">
+                                        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Travelogue Image">
+                                    </a>
+                                {% endif %}
+
+                                <!-- <a href="#!"><img class="card-img-top" src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" alt="..." /></a> -->
+                                <div class="card-body">
+                                    <div class="small text-muted">Author: {{ post.author }}</div>
+                                    <!-- <div class="small text-muted">{{ post.created_on}}</div> -->
+                                    <div class="small text-muted">Country: {{ post.country.name }}</div>
+                                    <h2 class="card-title h4">{{ post.title }}</h2>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                    <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
+                                    <!-- <a class="btn btn-primary" href="{ url 'country_list' }?country={{ post.country }}">Country →</a> -->
+                                    <!-- <a class="btn btn-primary" href="{ url 'author_list' }?author={{ post.author.id }}">Author →</a> -->
+                                    <hr />
+                                    <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
+                                        {{ post.number_of_likes }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+                <!-- Pagination-->
+                {% if is_paginated %}
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Categories</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <!-- <li><a href="{ url 'country_list' %}?country=GB">Great Britain</a></li> -->
+                                    <!-- <li><a href="{ url 'author_list' %}?author=2">Author</a></li> -->
+                                    <li><a href="#!">Freebies</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="#!">JavaScript</a></li>
+                                    <li><a href="#!">CSS</a></li>
+                                    <li><a href="#!">Tutorials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Side Widget</div>
+                    <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{%endblock%}
