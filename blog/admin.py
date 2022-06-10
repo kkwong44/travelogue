@@ -15,6 +15,19 @@ class PostAdmin(SummernoteModelAdmin):
     search_fields = ['title', 'country', 'content']
     list_filter = ('status', 'created_on')
     summernote_fields = ('content')
+    actions = ['publish_posts', 'disapprove_posts']
+
+    def publish_posts(self, request, queryset):
+        '''
+        Bulk action to publish posts
+        '''
+        queryset.update(status=1)
+
+    def disapprove_posts(self, request, queryset):
+        '''
+        Bulk action to disapprove posts
+        '''
+        queryset.update(status=2)
 
 
 @admin.register(Comment)
