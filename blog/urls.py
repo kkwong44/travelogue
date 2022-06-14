@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path("<uuid>/", views.PostDetail.as_view(), name='post_detail'),
+    path("like/<uuid>", views.PostLike.as_view(), name='post_like'),
 ]

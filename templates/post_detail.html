@@ -30,14 +30,34 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text "><strong><em>
+                    summary: {{ post.excerpt | safe }}
+                </em></strong></p>
                 <p class="card-text ">
-                    {{ post.content | safe }}
+                    detail: {{ post.content | safe }}
                 </p>
                 <div class="row">
 
                     <div class="col-1">
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                        <strong>
+                            {% if user.is_authenticated %}
+                                <form class="d-inline" action="{% url 'post_like' post.id %}" method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                        <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}">
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                    {% else %}
+                                        <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    {% endif %}
+                                </form>
+                            {% else %}
+                                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                            {% endif %}
+                            <span class="text-secondary">{{ post.number_of_likes }}</span>
+                        </strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -97,6 +117,7 @@
                         <form method="post" style="margin-top:1.3em">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
+                            <br>
                             <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                         </form>
                     {% endif %}        
