@@ -4,6 +4,7 @@ Import libraries
 import uuid
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from cloudinary.models import CloudinaryField
 from django_countries.fields import CountryField
 
@@ -25,10 +26,10 @@ class Post(models.Model):
     country = CountryField(blank_label='(select country)')
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField()
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
 
     class Meta:
         '''
@@ -47,6 +48,12 @@ class Post(models.Model):
         Method to returns number of likes
         '''
         return self.likes.count()
+
+    def get_absolute_url(self):
+        '''
+        Redirect to detail post
+        '''
+        return reverse('post_detail', kwargs={'uuid': self.pk})
 
 
 class Comment(models.Model):

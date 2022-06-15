@@ -4,8 +4,9 @@ Django Views
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, CreatePostForm
 
 
 class PostList(generic.ListView):
@@ -98,3 +99,19 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[uuid]))
+
+
+class PostCreate(LoginRequiredMixin, generic.CreateView):
+    '''
+    Create a new post
+    '''
+    model = Post
+    form_class = CreatePostForm
+    template_name = "post_create_or_update.html"
+
+    def form_valid(self, form):
+        '''
+        Validate user access rights to create post
+        '''
+        form.instance.author = self.request.user
+        return super().form_valid(form)

@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path("<uuid>/", views.PostDetail.as_view(), name='post_detail'),
     path("like/<uuid>", views.PostLike.as_view(), name='post_like'),
+    path("post/newpost/", views.PostCreate.as_view(), name='post_create'),
 ]
