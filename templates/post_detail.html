@@ -30,6 +30,9 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                {% if request.user == post.author %}
+                    <a class="btn btn-primary btn-sm" href="updatepost">Edit</a>
+                {% endif %}
                 <p class="card-text "><strong><em>
                     summary: {{ post.excerpt | safe }}
                 </em></strong></p>

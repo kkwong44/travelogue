@@ -4,7 +4,7 @@ Django Views
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post
 from .forms import CommentForm, CreatePostForm
 
@@ -115,3 +115,28 @@ class PostCreate(LoginRequiredMixin, generic.CreateView):
         '''
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+    '''
+    Edit and update post
+    '''
+    model = Post
+    form_class = CreatePostForm
+    template_name = "post_create_or_update.html"
+
+    def form_valid(self, form):
+        '''
+        Validate user access rights to create post
+        '''
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        '''
+        Validate post author
+        '''
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
