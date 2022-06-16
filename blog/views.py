@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
 from .models import Post
 from .forms import CommentForm, CreatePostForm
 
@@ -58,6 +59,7 @@ class PostDetail(View):
             liked = True
 
         comment_form = CommentForm(data=request.POST)
+        messages.success(request, 'Your comment has been submitted.')
 
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
@@ -113,6 +115,7 @@ class PostCreate(LoginRequiredMixin, generic.CreateView):
         '''
         Validate user access rights to create post
         '''
+        messages.success(self.request, 'Your post has been successfully added.')
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -129,6 +132,7 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         '''
         Validate user access rights to create post
         '''
+        messages.success(self.request, 'Your post has been successfully updated.')
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -140,6 +144,7 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         if self.request.user == post.author:
             return True
         return False
+
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     '''
