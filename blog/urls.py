@@ -10,4 +10,5 @@ urlpatterns = [
     path("like/<uuid>", views.PostLike.as_view(), name='post_like'),
     path("post/newpost/", views.PostCreate.as_view(), name='post_create'),
     path("<pk>/updatepost/", views.PostUpdate.as_view(), name='post_update'),
+    path("<pk>/deletepost/", views.PostDelete.as_view(), name='post_delete'),
 ]
