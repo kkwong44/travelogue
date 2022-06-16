@@ -11371,3 +11371,12 @@ textarea.form-control-lg {
   background-color: #fff;
   color: #23BBBB;
 }
+
+/*
+* Banner image
+*/
+
+.img-banner
+{
+    box-shadow:1px 1px 5px #000;
+}

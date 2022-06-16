@@ -13,12 +13,8 @@
                 <p class="post-subtitle">Country: {{ post.country.name }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
-                {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
-                {% endif %}
+                <!-- Default image -->
+                <img src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/beach_qooxcm.jpg" width="100%">
             </div>
         </div>
     </div>
@@ -26,7 +22,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card-comment mb-4  mt-3 left  top">
+        <div class="col col-md-2 card-comment mb-4  mt-3 left  top">
+            <!-- The featured image URL goes in the src attribute -->
+            {% if "placeholder" in post.featured_image.url %}
+                <img class="img-banner" src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/beach_qooxcm.jpg" width="100%">
+            {% else %}
+                <img class="img-banner" src=" {{ post.featured_image.url }} " width="100%">
+            {% endif %}
+        </div>
+        <div class="col col-md-10 card-comment mb-4  mt-3 left  top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
