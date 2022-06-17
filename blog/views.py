@@ -162,3 +162,19 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+class PopularList(generic.ListView):
+    model = Post
+    template_name = "post_popular.html"
+    paginate_by = 4
+
+    def get_queryset(self):
+
+        queryset = Post.objects.all()
+        country = self.request.GET.get('country', None)
+                
+        if country:
+            queryset = queryset.filter(country=country)
+
+        return queryset
