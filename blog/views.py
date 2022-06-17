@@ -115,7 +115,8 @@ class PostCreate(LoginRequiredMixin, generic.CreateView):
         '''
         Validate user access rights to create post
         '''
-        messages.success(self.request, 'Your post has been successfully added.')
+        messages.success(
+            self.request, 'Your post has been successfully added.')
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -132,7 +133,8 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         '''
         Validate user access rights to create post
         '''
-        messages.success(self.request, 'Your post has been successfully updated.')
+        messages.success(
+            self.request, 'Your post has been successfully updated.')
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -165,15 +167,20 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
 
 
 class PopularList(generic.ListView):
+    '''
+    Filter and show list of posts from selected popular country
+    '''
     model = Post
     template_name = "post_popular.html"
     paginate_by = 4
 
     def get_queryset(self):
-
+        '''
+        Get posts from selected country
+        '''
         queryset = Post.objects.all()
         country = self.request.GET.get('country', None)
-                
+
         if country:
             queryset = queryset.filter(country=country)
 
