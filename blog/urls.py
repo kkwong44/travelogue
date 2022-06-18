@@ -1,12 +1,11 @@
 '''
 Blog urls
 '''
-from django.urls import path, re_path
+from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
-    # re_path(r'^country/', views.PopularList.as_view(), name='country_list'),
     path('country/', views.PopularList.as_view(), name='country_list'),
     path("<uuid>/", views.PostDetail.as_view(), name='post_detail'),
     path("like/<uuid>", views.PostLike.as_view(), name='post_like'),
