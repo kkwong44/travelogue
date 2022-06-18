@@ -11358,21 +11358,6 @@ textarea.form-control-lg {
 }
 
 /*
-* Login and Signup
-*/
-
-.btn-signup {
-  background-color: #23BBBB;
-  color: #fff;
-}
-
-.btn-signup:hover,
-.btn-signup:active {
-  background-color: #fff;
-  color: #23BBBB;
-}
-
-/*
 * Banner image
 */
 
