@@ -33,3 +33,30 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         if self.request.user.username == user.username:
             return True
         return False
+
+
+class DeleteUser(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    '''
+    Delete User Account
+    '''
+    model = Users
+    template_name = "profiles/user_confirm_delete.html"
+    success_url = '/'
+
+    def delete(self, request, *args, **kwargs):
+        '''
+        Overwrite message method
+        '''
+        response = super().delete(request, *args, **kwargs)
+        messages.success(
+            self.request, 'Your account has been deleted sucessfully!')
+        return response
+
+    def test_func(self):
+        '''
+        Validate user
+        '''
+        user = self.get_object()
+        if self.request.user.username == user.username:
+            return True
+        return False

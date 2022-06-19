@@ -12,11 +12,11 @@
     <div class="container vh-80">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <fieldset class="form-group">
+            <fieldset class="form-group offset-md-3">
                 <h2>Are you sure you want to delete the post?</h2>
                 <p><em>Title: "{{ post.title }}"</em></p>
             </fieldset>
-            <div class="form-group">
+            <div class="form-group offset-md-3">
                 <br>
                 <button class="btn btn-danger btn-sm" type="submit">Yes, Delete</button>
                 <a class="btn btn-secondary btn-sm" href="{% url 'post_detail' post.id %}">Cancel</a>

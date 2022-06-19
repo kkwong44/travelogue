@@ -25,7 +25,11 @@
                 <a class="btn btn-secondary btn-lg" href="{% url 'home' %}">Cancel</a>
             </div>
             <div>
-                <a class="btn btn-outline-secondary btn-sm mt-3 mb-4" href="{% url 'account_change_password' %}">Change Password</a>
+                <a class="btn btn-outline-secondary btn-sm mt-3 mb-3" href="{% url 'account_change_password' %}">Change Password</a>
+            </div>
+            <hr>
+            <div>
+                <a class="btn btn-outline-danger btn-sm mt-3 mb-3" href="{% url 'delete_profile' user.id %}">Delete Account</a>
             </div>
         </form>
     </div>
