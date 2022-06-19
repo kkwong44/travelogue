@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load extras %}
+
 {% block content %}
 
     <!-- Page header with logo and tagline-->
@@ -33,12 +35,8 @@
                                     </a>
                                 {% endif %}
                                 <div class="card-body">
-                                    <div>
-                                        <a class="small text-decoration-none" href="{% url 'author_list' %}?author={{ post.author.id }}">Author: {{ post.author }}</a>
-                                    </div>
-                                    <div>
-                                        <a class="small text-decoration-none" href="{% url 'country_list' %}?country={{ post.country }}">Country: {{ post.country.name }}</a>
-                                    </div>
+                                    <div class="small text-muted">Author: {{ post.author }}</div>
+                                    <div class="small text-muted">Country: {{ post.country.name }}</div>
                                     <h2 class="card-title h4">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
@@ -47,6 +45,8 @@
                                 </div>
                             </div>
                         </div>
+                    {% empty %}
+                        <div><h3>You don't have any posts!</h3></div>
                     {% endfor %}
                 </div>
                 <!-- Pagination-->
@@ -54,45 +54,35 @@
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center">
                             {% if page_obj.has_previous %}
-                                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                                <li><a href="{% page_url page_obj.previous_page_number 'page' request.GET.urlencode %}" class="page-link">&laquo; PREV </a></li>
                             {% endif %}
                             {% if page_obj.has_next %}
-                                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                                <li><a href="{% page_url page_obj.next_page_number 'page' request.GET.urlencode %}" class="page-link"> NEXT &raquo;</a></li>
                             {% endif %}
                         </ul>
                     </nav>
                 {% endif %}
             </div>
-            <!-- Side widgets-->
+            <!-- Side widgets Author -->
             <div class="col-lg-4">
-                <!-- Author widget-->
-                {% if user.is_authenticated %}
-                    <div class="card mb-4">
-                        <div class="card-header">My Posts</div>
-                        <div class="card-body">
-                            <a href="{% url 'author_list' %}?author={{ user.id }}">{{ user.username }}</a>
-                        </div>
-                    </div>
-                {% endif %}
-                <!-- Popular Countries widget-->
                 <div class="card mb-4">
-                    <div class="card-header">Popular Countries</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="{% url 'country_list' %}?country=FR">France</a></li>
-                                    <li><a href="{% url 'country_list' %}?country=IT">Italy</a></li>
-                                </ul>
+                    {% for post in post_list %}
+                        {% if forloop.first %}
+                            {% if user.username == post.author %}
+                                <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
+                            {% else %}
+                                <div class="card-header"><strong>Posts by Author: {{ post.author }}</strong></div>
+                            {% endif %}
+                            <div class="card-body">                        
+                                <a href="{% url 'home' %}">All</a>
                             </div>
-                            <div class="col-sm-6">
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="{% url 'country_list' %}?country=ES">Spain</a></li>
-                                    <li><a href="{% url 'country_list' %}?country=TR">Turkey</a></li>
-                                </ul>
-                            </div>
+                        {% endif %}
+                    {% empty %}
+                        <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
+                        <div class="card-body">                        
+                            <a href="{% url 'home' %}">All</a>
                         </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

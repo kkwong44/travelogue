@@ -185,3 +185,22 @@ class PopularList(generic.ListView):
             queryset = queryset.filter(country=country)
 
         return queryset
+
+
+class AuthorPosts(generic.ListView):
+    model = Post
+    template_name = "post_author.html"
+    paginate_by = 4
+
+    def get_queryset(self):
+
+        queryset = Post.objects.all()
+        # queryset = Post.objects.filter(status=1, country="IT").order_by("-created_on")
+
+        author = self.request.GET.get('author', None)
+        # author = 2
+        
+        if author:
+            queryset = queryset.filter(author=author)
+
+        return queryset
