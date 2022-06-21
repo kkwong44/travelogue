@@ -16,7 +16,7 @@ class PostList(generic.ListView):
     '''
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
+    template_name = "blog/index.html"
     paginate_by = 4
 
 
@@ -37,7 +37,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog/post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -74,7 +74,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog/post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -109,7 +109,7 @@ class PostCreate(LoginRequiredMixin, generic.CreateView):
     '''
     model = Post
     form_class = CreatePostForm
-    template_name = "post_create_or_update.html"
+    template_name = "blog/post_create_or_update.html"
 
     def form_valid(self, form):
         '''
@@ -127,7 +127,7 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     '''
     model = Post
     form_class = CreatePostForm
-    template_name = "post_create_or_update.html"
+    template_name = "blog/post_create_or_update.html"
 
     def form_valid(self, form):
         '''
@@ -153,7 +153,7 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     Delete Post
     '''
     model = Post
-    template_name = "post_confirm_delete.html"
+    template_name = "blog/post_confirm_delete.html"
     success_url = '/'
 
     def delete(self, request, *args, **kwargs):
@@ -177,7 +177,7 @@ class PopularList(generic.ListView):
     Filter and show list of posts from selected popular country
     '''
     model = Post
-    template_name = "post_popular.html"
+    template_name = "blog/post_popular.html"
     paginate_by = 4
 
     def get_queryset(self):
@@ -198,7 +198,7 @@ class AuthorPosts(generic.ListView):
     Filter posts by author
     '''
     model = Post
-    template_name = "post_author.html"
+    template_name = "blog/post_author.html"
     paginate_by = 4
 
     def get_queryset(self):
