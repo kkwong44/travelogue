@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-   <!-- Page header with logo and tagline-->
+   <!-- Page header -->
    <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-1">
@@ -11,10 +11,10 @@
         </div>
     </div>
     </header>
-    <div class="container vh-80 w-25">
-        <form method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <!-- User Profile Form -->
+        <form method="POST" enctype="multipart/form-data" class="mb-5">
             <fieldset class="form-group">
-                <!-- <ledgen class="border-bottom mb-4">Blog Post</ledgen> -->
                 {% csrf_token %}
                 <p><b>Username: {{ user.username }}</b></p>
                 {{ form|crispy }}
@@ -29,7 +29,7 @@
             </div>
             <hr>
             <div>
-                <a class="btn btn-outline-danger btn-sm mt-3 mb-3" href="{% url 'delete_profile' user.id %}">Delete Account</a>
+                <a class="btn btn-outline-danger btn-sm mt-3 mb-5" href="{% url 'delete_profile' user.id %}">Delete Account</a>
             </div>
         </form>
     </div>

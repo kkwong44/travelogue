@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <!-- Page header with logo and tagline-->
+   <!-- Page header -->
    <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-1">
@@ -9,17 +9,18 @@
         </div>
     </div>
     </header>
-    <div class="container vh-80">
-        <form method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <!-- Check user and confirm to delete account -->
+        <form method="POST" enctype="multipart/form-data" class="mb-5">
             {% csrf_token %}
             {% if user.is_superuser %}
                 <fieldset class="form-group offset-md-3">
                     <h2>Account "{{ user.username }}" is an Administration Account.</h2>
-                    <p><strong>Delete not allowed from here. Use control panel.</strong></p>
+                    <p>Delete not allowed from here. Use control panel.</p>
                 </fieldset>
                 <div class="form-group offset-md-3">
                     <br>
-                    <a class="btn btn-secondary btn-sm" href="{% url 'home' %}">Cancel</a>
+                    <a class="btn btn-secondary btn-sm mb-5" href="{% url 'home' %}">Cancel</a>
                 </div>
             {% else %}
                 <fieldset class="form-group offset-md-1">
@@ -28,8 +29,8 @@
                 </fieldset>
                 <div class="form-group offset-md-1">
                     <br>
-                    <button class="btn btn-danger btn-sm" type="submit">Yes, Delete</button>
-                    <a class="btn btn-secondary btn-sm" href="{% url 'home' %}">Cancel</a>
+                    <button class="btn btn-danger btn-sm mb-5" type="submit">Yes, Delete</button>
+                    <a class="btn btn-secondary btn-sm mb-5" href="{% url 'home' %}">Cancel</a>
                 </div>
             {% endif%}
         </form>

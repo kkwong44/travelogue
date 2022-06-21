@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-   <!-- Page header with logo and tagline-->
+   <!-- Page header -->
    <header class="py-5 bg-light border-bottom mb-4">
     <div class="container">
         <div class="text-center my-1">
@@ -9,8 +9,9 @@
         </div>
     </div>
     </header>
-    <div class="container vh-80">
-        <form method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <!-- Check and confirm to delete post -->
+        <form method="POST" enctype="multipart/form-data" class="mb-5">
             {% csrf_token %}
             <fieldset class="form-group offset-md-3">
                 <h2>Are you sure you want to delete the post?</h2>
@@ -18,8 +19,8 @@
             </fieldset>
             <div class="form-group offset-md-3">
                 <br>
-                <button class="btn btn-danger btn-sm" type="submit">Yes, Delete</button>
-                <a class="btn btn-secondary btn-sm" href="{% url 'post_detail' post.id %}">Cancel</a>
+                <button class="btn btn-danger btn-sm mb-5" type="submit">Yes, Delete</button>
+                <a class="btn btn-secondary btn-sm mb-5" href="{% url 'post_detail' post.id %}">Cancel</a>
             </div>
         </form>
     </div>
