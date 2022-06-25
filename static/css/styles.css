@@ -11365,3 +11365,20 @@ textarea.form-control-lg {
 {
     box-shadow:1px 1px 5px #000;
 }
+
+/*
+* Customise style for Footer to match nav bar
+*/
+
+.footer-text {
+  color: #FFFFFF8C;
+}
+
+.footer-link {
+  color: #FFFFFF8C;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #FFFFFFC2;
+}

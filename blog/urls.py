@@ -9,6 +9,8 @@ urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path('about/', lambda request: render(request, 'blog/about.html'),
          name='about'),
+    path('contact_us/', lambda request: render(request,
+         'blog/contact_us.html'), name='contact_us'),
     path('country/', views.PopularList.as_view(), name='country_list'),
     path('author/', views.AuthorPosts.as_view(), name='author_list'),
     path("<uuid>/", views.PostDetail.as_view(), name='post_detail'),
