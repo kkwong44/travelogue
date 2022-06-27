@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>KW-Travelogue</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+    <main>
+        <!-- Page header -->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-1">
+                    <h1 class="fw-bolder">500</h1>
+                    <h1 class="fw-bolder">Internal Server Error</h1>
+                    <a class="btn btn-primary btn-sm" href="{% url 'home' %}">BACK TO HOMEPAGE</a>
+                </div>
+                <br>
+                <p class="text-center">If the problem persists please contact <a href="mailto:info@worldtravelogue.com"
+                    aria-label="Open email client in a new window.">technical support</a>.</p>
+            </div>
+        </header>
+    </main>
+</body>
