@@ -8,7 +8,7 @@
     <header class="py-5 bg-light border-bottom mb-4">
         <div class="container">
             <div class="text-center my-1">
-                <h1 class="fw-bolder">Welcome to KW Travelogue!</h1>
+                <h1 class="fw-bolder">Welcome to World Travelogue!</h1>
                 <p class="lead mb-0">A community to share your travel experiences</p>
             </div>
         </div>
@@ -41,7 +41,7 @@
                                     <p class="card-text">{{ post.excerpt }}</p>
                                     <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
                                     <hr />
-                                    <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+                                    <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
                                 </div>
                             </div>
                         </div>
