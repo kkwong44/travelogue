@@ -2,7 +2,7 @@
 WorldTravelogue is a free online travel diary for travellers across the world. It works from internet cafes and computers world wide, to allow you to update an online travel diary and share your experiences, it is free to join and takes just minutes to signup.
 On this site the blogs are based on the theme in Travel and is a collection of tools so that travellers can write down a journal and share it to family, friends and other travellers. Photo and link to useful sites about the areas can be added to your blog. Also, comments can be added to the blog by other users so it can help out future travellers to the area.
 
-Click [here](https://) to access live site.
+Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 
 *Screenshot - Mockup on WorldTravelogue App, generated from [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)*
 
@@ -49,10 +49,42 @@ The following are initial wireframe designs to meet the main objective.
 
 ![Wireframe on Post Detail Page](readme/images/wireframe-post-detail-page.jpg)
 
+### Design Approach
+
+The development approach on this project is based on the Principles of Agile and use the common agile practices.
+
+The design has broken down into User Stories, assigned and distributed priority to each user story, and used timeboxing to process the product backlog.
+
 ### Process Map
 
-The following is the process map for the site.
+The following is the process map for the site. The site can be accessed by non-registered users, registered users and administrators.
+
+* Non-registered users have restricted access and only can view posts on the site.
+* Registered users can create, read, update and delete posts. These users also have restricted access and only can manage their own posts.
+* Administrators are users that have both access to the site and the control panel where they have full control to user profiles, posts and approve comments.
 
 *Site Process Map*
 
 ![Process Map](readme/images/process-map.jpg)
+___
+
+## Program Requirements
+___
+
+## Features
+___
+## Future Features
+___
+## Validator Testing
+___
+## Testing
+___
+## Bugs
+___
+## Deployment
+___
+## Tools
+___
+## Credits
+___
+## Acknowledgment
