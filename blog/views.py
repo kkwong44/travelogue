@@ -184,7 +184,7 @@ class PopularList(generic.ListView):
         '''
         Get posts from selected country
         '''
-        queryset = Post.objects.all()
+        queryset = Post.objects.filter(status=1).order_by("-created_on")
         country = self.request.GET.get('country', None)
 
         if country:
@@ -205,7 +205,7 @@ class AuthorPosts(generic.ListView):
         '''
         Get author posts
         '''
-        queryset = Post.objects.all()
+        queryset = Post.objects.filter(status=1).order_by("-created_on")
         author = self.request.GET.get('author', None)
         if author:
             queryset = queryset.filter(author=author)
