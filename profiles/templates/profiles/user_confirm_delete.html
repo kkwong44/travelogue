@@ -11,11 +11,11 @@
     </header>
     <div class="container">
         <!-- Check user and confirm to delete account -->
-        <form method="POST" enctype="multipart/form-data" class="mb-5">
+        <form method="POST" enctype="multipart/form-data" class="mb-5 vh-100">
             {% csrf_token %}
             {% if user.is_superuser %}
                 <fieldset class="form-group offset-md-3">
-                    <h2>Account "{{ user.username }}" is an Administration Account.</h2>
+                    <legend>Account "{{ user.username }}" is an Administration Account.</legend>
                     <p>Delete not allowed from here. Use control panel.</p>
                 </fieldset>
                 <div class="form-group offset-md-3">
@@ -24,7 +24,7 @@
                 </div>
             {% else %}
                 <fieldset class="form-group offset-md-1">
-                    <h2>Are you sure you want to delete your account and all your posts?</h2>
+                    <legend>Are you sure you want to delete your account and all your posts?</legend>
                     <p><strong>Account: "{{ user.username }}"</strong></p>
                 </fieldset>
                 <div class="form-group offset-md-1">
