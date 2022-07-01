@@ -12,7 +12,7 @@ from .forms import CommentForm, CreatePostForm
 
 class PostList(generic.ListView):
     '''
-    Create view for the list of posts
+    Create view for the list of approved posts
     '''
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -24,7 +24,7 @@ class PostDetail(View):
     '''
     Create view for individual post
     '''
-    def get(self, request, uuid, *args, **kwargs):
+    def get(self, request, uuid):
         '''
         Use uuid to get post
         '''
@@ -32,9 +32,10 @@ class PostDetail(View):
         post = get_object_or_404(queryset)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
+        # Check like status for current user on this post
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-
+        # Rendering post
         return render(
             request,
             "blog/post_detail.html",
@@ -47,7 +48,7 @@ class PostDetail(View):
             },
         )
 
-    def post(self, request, uuid, *args, **kwargs):
+    def post(self, request, uuid):
         '''
         Post comment
         '''
@@ -55,23 +56,23 @@ class PostDetail(View):
         post = get_object_or_404(queryset)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
+        # Check like status for current user on this post
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-
+        # Post form with success message
         comment_form = CommentForm(data=request.POST)
         messages.success(request, 'Your comment has been submitted.')
-
+        # Validate and commit form
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            if request.user.is_superuser:
-                comment.approved = True
+            comment.approved = True
             comment.post = post
             comment.save()
         else:
             comment_form = CommentForm()
-
+        # Rendering post
         return render(
             request,
             "blog/post_detail.html",
@@ -94,12 +95,12 @@ class PostLike(View):
         Like and unlike post
         '''
         post = get_object_or_404(Post, id=uuid)
-
+        # Set like status for current user
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
-
+        # Reutun to post detail
         return HttpResponseRedirect(reverse('post_detail', args=[uuid]))
 
 
@@ -142,15 +143,12 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         '''
         Validate post author
         '''
-        post = self.get_object()
-        if self.request.user == post.author:
-            return True
-        return False
+        return self.request.user == self.get_object().author
 
 
 class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     '''
-    Delete Post
+    Delete Post and return to home page
     '''
     model = Post
     template_name = "blog/post_confirm_delete.html"
@@ -166,10 +164,7 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
         '''
         Validate post author
         '''
-        post = self.get_object()
-        if self.request.user == post.author:
-            return True
-        return False
+        return self.request.user == self.get_object().author
 
 
 class PopularList(generic.ListView):
