@@ -19,6 +19,7 @@
         <!-- Form for create and update post -->
         <form method="POST" enctype="multipart/form-data">
             <fieldset class="form-group">
+                <legend>New Post</legend>
                 {% csrf_token %}
                 {{ form|crispy }}
             </fieldset>

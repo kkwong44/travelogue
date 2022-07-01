@@ -16,7 +16,7 @@
         <form method="POST" enctype="multipart/form-data" class="mb-5">
             <fieldset class="form-group">
                 {% csrf_token %}
-                <p><b>Username: {{ user.username }}</b></p>
+                <legend><b>Username: {{ user.username }}</b></legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
