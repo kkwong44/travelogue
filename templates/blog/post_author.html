@@ -1,91 +1,39 @@
+<!-- Page to display posts filtered by select author -->
+<!-- from side widget or from the post -->
+
 {% extends "base.html" %}
 
 {% load extras %}
 
 {% block content %}
 
-    <!-- Page header with logo and tagline-->
-    <header class="py-5 bg-light border-bottom mb-4">
-        <div class="container">
-            <div class="text-center my-1">
-                <h1 class="fw-bolder">Welcome to World Travelogue!</h1>
-                <p class="lead mb-0">A community to share your travel experiences</p>
-            </div>
-        </div>
-    </header>
-    <!-- Page content-->
-    <div class="container">
-        <div class="row">
-            <!-- Blog entries-->
-            <div class="col-lg-8">
-                <!-- Nested row for blog posts-->
-                <div class="row">
-                    {% for post in post_list %}
-                        <div class="col-lg-6">
-                            <!-- Blog post-->
-                            <div class="card mb-4">
-                                {% if "placeholder" in post.featured_image.url %}
-                                    <a href="{% url 'post_detail' post.id %}">
-                                        <img class="card-img-top"
-                                            src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg" alt="Defalut Travelogue Image">
-                                    </a>
+        <!-- Include common template for page header and list the posts -->
+        {% include "blog/post_list.html" %}
+                <!-- Side widgets Author -->
+                <div class="col-lg-4 vh-100">
+                    <div class="card mb-4">
+                        <!-- Display current filtered is set by author -->
+                        <!-- Option to reset filter -->
+                        {% for post in post_list %}
+                            {% if forloop.first %}
+                                {% if user.username == post.author %}
+                                    <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
                                 {% else %}
-                                    <a href="{% url 'post_detail' post.id %}">
-                                        <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Travelogue Image">
-                                    </a>
+                                    <div class="card-header"><strong>Posts by Author: {{ post.author }}</strong></div>
                                 {% endif %}
-                                <div class="card-body">
-                                    <div class="small text-muted">Author: {{ post.author }}</div>
-                                    <div class="small text-muted">Country: {{ post.country.name }}</div>
-                                    <h2 class="card-title h4">{{ post.title }}</h2>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                    <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
-                                    <hr />
-                                    <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i> {{ post.number_of_likes }}</p>
+                                <div class="card-body">                        
+                                    <a href="{% url 'home' %}">All</a>
                                 </div>
-                            </div>
-                        </div>
-                    {% empty %}
-                        <div><h3>You don't have any posts!</h3></div>
-                    {% endfor %}
-                </div>
-                <!-- Pagination-->
-                {% if is_paginated %}
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            {% if page_obj.has_previous %}
-                                <li><a href="{% page_url page_obj.previous_page_number 'page' request.GET.urlencode %}" class="page-link">&laquo; PREV </a></li>
                             {% endif %}
-                            {% if page_obj.has_next %}
-                                <li><a href="{% page_url page_obj.next_page_number 'page' request.GET.urlencode %}" class="page-link"> NEXT &raquo;</a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                {% endif %}
-            </div>
-            <!-- Side widgets Author -->
-            <div class="col-lg-4">
-                <div class="card mb-4">
-                    {% for post in post_list %}
-                        {% if forloop.first %}
-                            {% if user.username == post.author %}
-                                <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
-                            {% else %}
-                                <div class="card-header"><strong>Posts by Author: {{ post.author }}</strong></div>
-                            {% endif %}
+                        {% empty %}
+                            <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
                             <div class="card-body">                        
                                 <a href="{% url 'home' %}">All</a>
                             </div>
-                        {% endif %}
-                    {% empty %}
-                        <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
-                        <div class="card-body">                        
-                            <a href="{% url 'home' %}">All</a>
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 {%endblock%}
