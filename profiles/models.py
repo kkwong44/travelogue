@@ -7,11 +7,11 @@ from django.urls import reverse
 
 class Users(User):
     '''
-    Modify user model
+    Use a Proxy Model to extend the existing User model
     '''
     class Meta:
         '''
-        Inherent from default
+        Set Proxy Model
         '''
         proxy = True
 

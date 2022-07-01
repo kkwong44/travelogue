@@ -6,6 +6,7 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 
 
+# Register Blog Posts
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     '''
@@ -17,19 +18,20 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     actions = ['publish_posts', 'disapprove_posts']
 
-    def publish_posts(self, request, queryset):
+    def publish_posts(self, queryset):
         '''
         Bulk action to publish posts
         '''
         queryset.update(status=1)
 
-    def disapprove_posts(self, request, queryset):
+    def disapprove_posts(self, queryset):
         '''
         Bulk action to disapprove posts
         '''
         queryset.update(status=2)
 
 
+# Register Post Comments
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     '''
@@ -40,13 +42,13 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'created_on')
     actions = ['approve_comments', 'disapprove_comments']
 
-    def approve_comments(self, request, queryset):
+    def approve_comments(self, queryset):
         '''
         Bulk action to approve comments
         '''
         queryset.update(approved=True)
 
-    def disapprove_comments(self, request, queryset):
+    def disapprove_comments(self, queryset):
         '''
         Bulk action to disapprove comments
         '''

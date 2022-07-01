@@ -1,3 +1,8 @@
+'''
+Administration to Django Control Panel
+'''
 from django.contrib import admin
+from .models import Users
 
-# Register your models here.
+# Register User Profile
+admin.site.register(Users)

@@ -29,10 +29,7 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         '''
         Validate user identity to edit own profile
         '''
-        user = self.get_object()
-        if self.request.user.username == user.username:
-            return True
-        return False
+        return self.request.user.username == self.get_object().username
 
 
 class DeleteUser(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
@@ -56,7 +53,4 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
         '''
         Validate user
         '''
-        user = self.get_object()
-        if self.request.user.username == user.username:
-            return True
-        return False
+        return self.request.user.username == self.get_object().username
