@@ -1,137 +1,153 @@
+<!-- Page for detail post on individual blog -->
+
 {% extends 'base.html' %} {% block content %}
 
 {% load crispy_forms_tags %}
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-                <p class="post-subtitle">Country: {{ post.country.name }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- Default image -->
-                <img src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg" width="100%">
+    <!-- Page banner with default image and post's title, author, date and country -->
+    <div class="masthead">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-md-6 masthead-text">
+                    <!-- Post title goes in these h1 tags -->
+                    <h1 class="post-title">{{ post.title }}</h1>
+                    <!-- Post author goes before the | the post's created date goes after -->
+                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                    <p class="post-subtitle">Country: {{ post.country.name }}</p>
+                </div>
+                <div class="d-none d-md-block col-md-6 masthead-image">
+                    <!-- Default image -->
+                    <img src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
+                        alt="Defalut Travelogue Image" width="100%">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col col-md-2 card-comment mb-4  mt-3 left  top">
-            <!-- The featured image URL goes in the src attribute -->
-            {% if "placeholder" in post.featured_image.url %}
-                <img class="img-banner" src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg" width="100%">
-            {% else %}
-                <img class="img-banner" src=" {{ post.featured_image.url }} " width="100%">
-            {% endif %}
-        </div>
-        <div class="col col-md-10 card-comment mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                {% if request.user == post.author %}
-                    <a class="btn btn-primary btn-sm" href="updatepost">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="deletepost">Delete</a>
-                {% endif %}
-                <p class="card-text "><strong><em>
-                    summary: {{ post.excerpt | safe }}
-                </em></strong></p>
-                <p class="card-text ">
-                    detail: {{ post.content | safe }}
-                </p>
-                <div class="row">
-                    <div class="col-1">
-                        <strong>
-                            {% if user.is_authenticated %}
-                                <form class="d-inline" action="{% url 'post_like' post.id %}" method="POST">
-                                    {% csrf_token %}
-                                    {% if liked %}
-                                        <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}">
-                                            <i class="fas fa-heart"></i>
-                                        </button>
-                                    {% else %}
-                                        <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}">
-                                            <i class="far fa-heart"></i>
-                                        </button>
-                                    {% endif %}
-                                </form>
-                            {% else %}
-                                <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                            <span class="text-secondary">{{ post.number_of_likes }}</span>
-                        </strong>
-                    </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                            <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 card-comment mb-4  mt-3 ">
-            <h3>Comments:</h3>
-            <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-                {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
-                    <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    <!-- The body of the comment goes before the | -->
-                    {{ comment.body | linebreaks }}
-                </div>
-                <!-- Our for loop ends here -->
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col-md-4 card-comment mb-4  mt-3 ">
-            <div class="card-body">
-                <!-- Crispy Form to leave a comment -->
-                {% if commented %}
-                    {% if user.is_superuser %}
-                        <div class="alert alert-success" roel="alert">
-                            Comment successfully added
-                        </div>
-                    {% else %}
-                        <div class="alert alert-success" roel="alert">
-                            Your comment is awaiting for approval
-                        </div>
-                    {% endif %}
+    <!-- Post Details -->
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-2 card-comment mb-4  mt-3 left  top">
+                <!-- The featured image or default image -->
+                {% if "placeholder" in post.featured_image.url %}
+                    <img class="img-banner"
+                        src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
+                        alt="Defalut Travelogue Image For {{ post.title }}" width="100%">
                 {% else %}
-                    {% if user.is_authenticated %}
-                        <h3>Leave a comment:</h3>
-                        <p>Posting as: {{ user.username }}</p>
-                        <form method="post" style="margin-top:1.3em">
-                            {{ comment_form | crispy }}
-                            {% csrf_token %}
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                        </form>
-                    {% endif %}        
+                    <img class="img-banner" src=" {{ post.featured_image.url }} "
+                        alt="Travelogue Image For {{ post.title }}" width="100%">
                 {% endif %}
+            </div>
+            <div class="col col-md-10 card-comment mb-4  mt-3 left  top">
+                <div class="card-body">
+                    <!-- Show Edit and Delete buttons for owner -->
+                    {% if request.user == post.author %}
+                        <a class="btn btn-primary btn-sm" href="updatepost">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="deletepost">Delete</a>
+                    {% endif %}
+                    <!-- Post summary and content -->
+                    <!-- Use the | safe filter inside the template tags -->
+                    <p class="card-text "><strong><em>
+                        summary: {{ post.excerpt | safe }}
+                    </em></strong></p>
+                    <p class="card-text ">
+                        detail: {{ post.content | safe }}
+                    </p>
+                    <div class="row">
+                        <div class="col-1">
+                            <strong>
+                                <!-- Allow registered users to like or unlike post -->
+                                {% if user.is_authenticated %}
+                                    <form class="d-inline" action="{% url 'post_like' post.id %}" method="POST">
+                                        {% csrf_token %}
+                                        {% if liked %}
+                                            <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}" aria-label="like or unlike post">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                        {% else %}
+                                            <button class=btn-like type="submit" name="blogpost_id" value="{{post.id}}" aria-label="like or unlike post">
+                                                <i class="far fa-heart"></i>
+                                            </button>
+                                        {% endif %}
+                                    </form>
+                                {% else %}
+                                    <!-- Grayout like button for unregister users -->
+                                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                {% endif %}
+                                <!-- Display total number of likes -->
+                                <span class="text-secondary">{{ post.number_of_likes }}</span>
+                            </strong>
+                        </div>
+                        <div class="col-1">
+                            <!-- Display total number of comments -->
+                            {% with comments.count as total_comments %}
+                                <strong class="text-secondary"><i class="far fa-comments"></i>
+                                {{ total_comments }}</strong>
+                            {% endwith %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+        <!-- Comments Section -->
+        <div class="row min-vh-100">
+            <!-- Comments left by users -->
+            <div class="col-md-8 card-comment mb-4  mt-3 ">
+                <h2 class="h4">Comments:</h2>
+                <div class="card-body">
+                    <!-- Display all comments for this post -->
+                    {% for comment in comments %}
+                        <div class="comments" style="padding: 10px;">
+                            <p class="font-weight-bold">
+                                <!-- The commenter's name -->
+                                {{ comment.name }}
+                                <span class=" text-muted font-weight-normal">
+                                    <!-- The comment's created date -->
+                                    {{ comment.created_on }}
+                                </span> wrote:
+                            </p>
+                            <!-- Content of the comment -->
+                            {{ comment.body | linebreaks }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Create new comment -->
+            <div class="col-md-4 card-comment mb-4  mt-3 ">
+                <div class="card-body">
+                    <!-- Crispy Form to leave a comment -->
+                    {% if commented %}
+                        <!-- Confirmation message -->
+                        {% if user.is_superuser %}
+                            <div class="alert alert-success" roel="alert">
+                                Comment successfully added
+                            </div>
+                        {% else %}
+                            <div class="alert alert-success" roel="alert">
+                                Your comment is awaiting for approval
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <!-- Post comment -->
+                        {% if user.is_authenticated %}
+                            <h2 class="h4">Leave a comment:</h2>
+                            <p>Posting as: {{ user.username }}</p>
+                            <form method="post" style="margin-top:1.3em">
+                                {{ comment_form | crispy }}
+                                {% csrf_token %}
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            </form>
+                        {% endif %}        
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock content %}
