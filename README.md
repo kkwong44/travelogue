@@ -53,7 +53,14 @@ The following are initial wireframe designs to meet the main objective.
 
 The development approach on this project is based on the Principles of Agile and use the common agile practices.
 
-The design has broken down into User Stories, assigned and distributed priority to each user story, and used timeboxing to process the product backlog.
+The design has broken down into User Stories and grouped into Epics. Each User Story has been allocated its priority, story point and set acceptance criteria and tasks. Timeboxing approach will be used to process the product backlog.
+
+**[User Stories Full Detailed Report (Click to view)](readme/user-stories/user-stories.md)**
+
+*Summary of User Stories*
+
+![Summary of User Stories](readme/user-stories/user-stories-summary.jpg)
+
 
 ### Process Map
 
