@@ -55,9 +55,13 @@ The development approach on this project is based on the Principles of Agile and
 
 The design has broken down into User Stories and grouped into Epics. Each User Story has been allocated its priority, story point and set acceptance criteria and tasks. Timeboxing approach will be used to process the product backlog.
 
+**User Stories**
+
+There are 37 user stories identified at the beginning of the project and they were grouped into 7 Epics as listed in the table below.
+
 **[User Stories Full Detailed Report (Click to view)](readme/user-stories/user-stories.md)**
 
-*Summary of User Stories*
+*Summary of Epics and User Stories*
 
 ![Summary of User Stories](readme/user-stories/user-stories-summary.jpg)
 
