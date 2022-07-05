@@ -19,14 +19,22 @@
         <!-- Form for create and update post -->
         <form method="POST" enctype="multipart/form-data">
             <fieldset class="form-group">
-                <legend>New Post</legend>
+                {% if "newpost" in request.path %}
+                    <legend>New Post</legend>
+                {% else %}
+                    <legend>Update Post</legend>
+                {% endif %}
                 {% csrf_token %}
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group mb-5">
                 <br>
                 <button class="btn btn-primary btn-lg" type="submit">Submit</button>
-                <a class="btn btn-secondary btn-lg" href="{% url 'home' %}">Cancel</a>
+                {% if "newpost" in request.path %}
+                    <a class="btn btn-secondary btn-lg" href="{% url 'home' %}">Cancel</a>
+                {% else %}
+                    <a class="btn btn-secondary btn-lg" href="{% url 'post_detail' post.id %}">Cancel</a>
+                {% endif %}
             </div>
         </form>
     </div>
