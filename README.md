@@ -59,7 +59,7 @@ The design has broken down into User Stories and grouped into Epics. Each User S
 
 There are 37 user stories identified at the beginning of the project and they were grouped into 7 Epics as listed in the table below.
 
-**[User Stories Full Detailed Report (Click to view)](readme/user-stories/user-stories.md)**
+**[User Stories Full Detailed Report (Click to view)](readme/user-stories/user-stories.md#user-stories)**
 
 *Summary of Epics and User Stories*
 
