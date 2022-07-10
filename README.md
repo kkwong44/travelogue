@@ -89,17 +89,17 @@ The aim of this site is to create a community to share travel experiences and le
 
 In order to meet the aim and allow the community to grow. There are no restriction to visit the site but different access rights will be set to different user groups. The user groups have been defined into 3 different types for this site.
 
-1. Non-registered users
+1. **Non-registered users**
     * Only allow to view posts and comments
     * Allow to register
 
-2. Registered users
+2. **Registered users**
     * Allow to login
     * View posts, like or unlike and leave comment to other users’ posts
     * Create, Read, Update and Delete personal posts
     * View, update and delete personal account
 
-3. Administrators
+3. **Administrators**
     * Allow to login
     * View posts, like or unlike and leave comment to other users’ posts
     * Create, Read, Update and Delete personal posts
@@ -112,7 +112,7 @@ Users should be able to navigate and find information easily.
 
 To help users to navigate and find information easily, all pages have a header with a navigation bar and a footer. The navigation bar items are depending on user access rights. Footer is where users can find the link to "Contact us" page and links to social media platform. Each social media link will be opened in a separate window.
 
-#### Header for Non-Registered users
+#### **Header for Non-Registered users**
 
 * Menu Items:
 
@@ -120,21 +120,21 @@ To help users to navigate and find information easily, all pages have a header w
 
 ![header-non-registered](/readme/images/header-footer-non-registered.png)
 
-#### Header for Registered Users
+#### **Header for Registered Users**
 
 * Menu Items:
     * Home___New Post___User Profile___About___Logout
 
 ![header-registered](/readme/images/header-footer-registered.png)
 
-#### Header for Administrators
+#### **Header for Administrators**
 
 * Menu Items:
     * Home___New Post___User Profile___About___Control Panel___Logout
 
 ![header-administrators](/readme/images/header-footer-adminstrators.png)
 
-#### Header and Footer with Collapsed Menu Bar For Mobile Devices
+#### **Header and Footer with Collapsed Menu Bar For Mobile Devices**
 
 ![header-collapsed](/readme/images/header-footer-collapsed.png)
 
@@ -144,7 +144,7 @@ Users should able to view posts when they visiting this site.
 
 When users visiting this site, they should be landed onto the home page. The home page is where all the published posts are listed and the site has set a maximum of 4 posts per page. Navigation buttons are available to select next and previous page when there are more than 4 posts.
 
-#### Posts list in Home Page
+#### **Posts list in Home Page**
 
 Each Post has the following layout:
 
@@ -159,11 +159,11 @@ Each Post has the following layout:
 
 ![post-layout](/readme/images/post-listing.png)
 
-#### Users Access Rights to Posts
+#### **Users Access Rights to Posts**
 
 Different user groups have different access rights to the posts.
 
-##### Access rights for Non-Registered users
+#### Access rights for Non-Registered users
 
 * Allow to register as a site member by clicking the "Register" from the menu bar
 * Read about the site by clicking the "About" from the menu bar
@@ -174,7 +174,7 @@ Different user groups have different access rights to the posts.
 
 ![home-page-non-registered](/readme/images/home-page-non-registered.png)
 
-##### Access rights for Registered users
+#### Access rights for Registered users
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -187,7 +187,7 @@ Different user groups have different access rights to the posts.
 
 ![home-page-registered](/readme/images/home-page-registered.png)
 
-##### Access rights for Administrators
+#### Access rights for Administrators
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -199,27 +199,27 @@ Different user groups have different access rights to the posts.
 * Select posts to view from a country by clicking the Country from a post
 * Select posts to view from an author by clicking the Author from a post
 
-![home-page-administrators](/readme/images/home-page-registered.png)
+![home-page-administrators](/readme/images/home-page-administrator.png)
 
-#### Responsive on Mobile Devices
+#### **Responsive on Mobile Devices**
 
 For mobile devices, 1 post per row and side widgets are re-arranged below the posts.
 
 ![home-page-collapsed](/readme/images/home-page-mobile.png)
 
-#### Filter Posts
+#### **Filter Posts**
 
 Users should be able to view posts that is more relevant to them.
 
 This site can narrow down the posts by offering filters to the users by Country or Author.
 
-##### Filter By Country
+#### Filter By Country
 
 Select a country from the side widget for "Popular Countries" or the country from a post. All the posts related to the selected country will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected country and the side widget shows the current filter is set to the selected country. Select "All" to clear the current filter.
 
 ![posts-filtered-by-country](/readme/images/posts-by-country.png)
 
-##### Filter By Author
+#### Filter By Author
 
 Select your own posts from the side widget for "My Posts" or an author from a post. All the posts related to the selected author will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected author and the side widget shows the current filter is set to the selected author. Select "All" to clear the current filter.
 
@@ -233,7 +233,7 @@ When a user signed in to the site then a new post can be created by clicking "Ne
 
 Create a New Post form is presented to the user and all the mandatory fields need to be filled in before it can be submitted.
 
-*Form to Create a New Post*
+**Create a New Post Form**
 
 ![post-create](/readme/images/post-create.png)
 
@@ -260,18 +260,18 @@ Each Detail Post has the following layout:
     * A list of comments from most recent first with Author and Date stamp
     * Leave a comment form with a Submit button (Registered Users Only)
 
-#### Users Access Rights to Post Detail
+#### **Users Access Rights to Post Detail**
 
 Different user groups have different access rights to the post detail.
 
-##### Access Rights for Non-Registered Users
+#### Access Rights for Non-Registered Users
 
 * View post details only
 * View comments only
 
 ![post-detail-non-registered](/readme/images/post-detail-non-registered.png)
 
-##### Access Rights for Registered Users
+#### Access Rights for Registered Users
 
 * View post details
 * Leave comment to any post
@@ -279,7 +279,7 @@ Different user groups have different access rights to the post detail.
 
 ![post-detail-registered](/readme/images/post-detail-registered.png)
 
-##### Access Rights for Owner's Post
+#### Access Rights for Owner's Post
 
 * View post details
 * Leave comment to any post
@@ -319,7 +319,7 @@ Registered users should able to edit and update personal posts
 
 When the registered user signed in to the site and select a personal post then the post can be updated by submitting the form.
 
-*A Form to Edit and Update Post*
+**A Form to Edit and Update Post**
 
 ![edit-post](/readme/images/post-edit.png)
 
@@ -329,7 +329,7 @@ Registered users should able to delete personal posts
 
 When the registered user signed in to the site and select a personal post then the post can be deleted.
 
-*Confirmation Message to Delete a Post*
+**Confirmation Message to Delete a Post**
 
 ![edit-post](/readme/images/post-delete.png)
 
@@ -339,31 +339,31 @@ Users should be able to create, read, update and delete their own account profil
 
 The site allows viewers to create an account. After signed in to the account, the owner can view, update and delete their account profile.
 
-#### Create an Account
+#### **Create an Account**
 
 Select Register from the menu bar, fill and submit the form.
 
 ![account-create](/readme/images/account-register.png)
 
-#### Sign in to an Account
+#### **Sign in to an Account**
 
 Select Login from the menu bar,  fill and submit user details
 
 ![account-login](/readme/images/account-login.png)
 
-#### Sign out from Account
+#### **Sign out from Account**
 
 Select Logout from the menu bar and confirm sign out.
 
 ![account-logout](/readme/images/account-logout.png)
 
-#### View an Account Profile
+#### **View an Account Profile**
 
 Login and select User Profile from the menu bar
 
 ![user-profile-read](/readme/images/user-profile.png)
 
-#### Update an Account Profile
+#### **Update an Account Profile**
 
 Login and select User Profile from the menu bar
 
@@ -371,7 +371,7 @@ Edit and select Update to update profile
 
 ![user-profile-update](/readme/images/user-profile.png)
 
-#### Change an Account Password
+#### **Change an Account Password**
 
 Login and select User Profile from the menu bar
 
@@ -381,7 +381,7 @@ Fill details and submit changes
 
 ![user-profile-change-password](/readme/images/user-propfile-change-password.png)
 
-#### Delete an Account
+#### **Delete an Account**
 
 Login and select User Profile from the menu bar
 
