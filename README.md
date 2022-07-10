@@ -405,6 +405,71 @@ The Contact us page contains information for user to contact the support team an
 
 ![contact-us-page](/readme/images/contact-us-page.png)
 
+### Message Bar
+
+Users should be able to confirm actions have been performed.
+
+On this site, a message bar has been created to confirm action has been performed. Message only appears for 3 seconds when the action has been performed. Examples are Login and Logout successfully, Post and Comment added successfully.
+
+**Message shows signed in as admin**
+
+![message](/readme/images/message.png)
+
+### Administrator Control Panel
+
+Site administrators need a facility to maintain users, posts and comments.
+
+Django administration allows to extend the basic features in the control panel. This has been modifield to offer extra functionalities to maintain the blog posts and comment.
+
+Site superuser account need to be created in order to access to the control panel via the site or URL link by adding "/admin" to the home page url.
+
+**Control Panel - Login Page**
+
+![Control-Panel-login](/readme/images/control-panel-login.png)
+
+**Control Panel - Home Page**
+
+![Control-Panel-Home-Page](/readme/images/control-panel.png)
+
+**Blog Posts**
+
+This is the section to maintain the posts in the blog application. The standard features in this section allows to Create, Read, Update and Delete posts.
+
+Following are customised features:
+* List Display
+    * Display Fields: Title, Country, Status and Created On
+* Search Bar
+    * Search fields: Title, Country and Content
+* Filters
+    * By Status
+    * By Created On
+* Action in Bulk
+    * Delete selected posts
+    * Publish posts
+    * Disapprove posts
+
+![control-panel-posts](/readme/images/control-panel-posts.png)
+
+**Blog Post Comments**
+
+This is the section to maintain the comments in the blog application. The standard features in this section allows to Create, Read, Update and Delete comments.
+
+Following are customised features:
+* List Display
+    * Display Fields: Name, Body, Post, Created On and Approved
+* Search Bar
+    * Search fields: Name, email and body
+* Filters
+    * By Approved
+    * By Created On
+* Action in Bulk
+    * Delete selected comments
+    * Approve Comments
+    * Disapprove Comments
+
+![control-panel-comments](/readme/images/control-panel-comments.png)
+
+
 ___
 ## Future Features
 ___
