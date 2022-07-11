@@ -419,7 +419,7 @@ On this site, a message bar has been created to confirm action has been performe
 
 Site administrators need a facility to maintain users, posts and comments.
 
-Django administration allows to extend the basic features in the control panel. This has been modifield to offer extra functionalities to maintain the blog posts and comment.
+Django administration allows to extend the basic features in the control panel. This has been modified to offer extra functionalities to maintain the blog posts and comment.
 
 Site superuser account need to be created in order to access to the control panel via the site or URL link by adding "/admin" to the home page url.
 
@@ -469,6 +469,9 @@ Following are customised features:
 
 ![control-panel-comments](/readme/images/control-panel-comments.png)
 
+**User Profile**
+
+This is the section to maintain the user profiles in the travelogue project. For this initial phase the profiles are only extension of the users from the Authentication and Authorization section. Additional features can be added to the profiles in future development.
 
 ___
 ## Future Features
