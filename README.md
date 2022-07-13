@@ -494,6 +494,28 @@ This is the section to maintain the user profiles in the travelogue project. For
 
 ___
 ## Future Features
+
+Five user stories were decided not to be included at the initial phase of the project. These can be implemented in the next milestone.
+
+The user stories are:
+
+* Reset Password
+    * User able to reset forgotten password
+* Filter by Country
+    * User able to filter posts from list of all countries
+* Sort Posts
+    * User able to sort posts by fields such as date and country
+* Contact Form
+    * Provide users a contact form
+* Response to Request
+    * Initial response to contact form automatically by email
+
+As mentioned in the features section that current User Profiles is only an extension of users from Django table. The intention of the user profiles is to provide additional future features such as user’s photo or avatar, social media accounts and date joined as a member.
+
+The site can greatly improve by allowing multiple images to upload and display in a post.
+
+Another feature is to create an image gallery so viewer can view all images by an author or a country.
+
 ___
 ## Validator Testing
 ___
@@ -502,9 +524,82 @@ ___
 ## Bugs
 ___
 ## Deployment
+
+This is a Django project and deployed in Heroku.
+
+At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running sucessfully in Heroku.
+
+The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
+
+The deployed app can be found [here](https://travelogue22kw.herokuapp.com/).
+
+### Development tools
+* GitHub is a code hosting platform for version control and collaboration
+* Gitpod is a ready-to-code developer environment
+* Heroku for building, deploying, and managing apps
+
+### Development processes
+
+* All the development works are carried out in Gitpod
+* Create a repository in Github through Gitpod
+* Start the project from a template written by Code Institute. The full template can be copied from [here](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+    **Repeat the following until project completion**
+
+* Developing your site, save your project in your Gitpod workspaces
+* Use git add command to add files to local repository
+* Use git commit command to commit the changes to local repository
+
+### Deployment to Github Pages
+
+* Use git push to upload local repository content (Gitpod) to a remote repository (Github)
+* The latest code pushed to Github then can be deployed to Heroku
+
+***You can use GitHub Desktop to clone and fork repositories that exist on GitHub.***
+
+Click [here](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) for more information on Cloning and forking repositories from GitHub Desktop.
+
+### Steps for Setting up basic Django Project and Deploying to Heroku
+
+The following are the steps to setting up Django project and deploying to Heroku.
+
+![Deployment-1](/readme/images/deployment-1.png)
+![Deployment-2](/readme/images/deployment-2.png)
+![Deployment-3](/readme/images/deployment-3.png)
+![Deployment-4](/readme/images/deployment-4.png)
+![Deployment-5](/readme/images/deployment-5.png)
+![Deployment-6](/readme/images/deployment-6.png)
+![Deployment-7](/readme/images/deployment-7.png)
+
 ___
 ## Tools
+The tools used to carry out the development and deployment on this project are:
+* Gitpod and Github
+* Python modules
+* Django and libraries
+* Cloudinary
+* Chrome Dev Tools
+* Webpage Screenshots - Chrome app extension (FireShot)
+* [Lucid Chart](https://www.lucidchart.com/) for creating flow chart
+* [PEP8 online checker](http://pep8online.com/) for code validation
+* [Heroku](https://id.heroku.com/login) for building, deploying, and managing apps
+* [Pixerbay](https://pixabay.com/) for images
+
 ___
 ## Credits
+
+* [Template](https://github.com/Code-Institute-Org/gitpod-full-template) created by [Code Institute](https://codeinstitute.net/)
+* [W3Schools](https://www.w3schools.com/python/default.asp) for research, examples and techniques in Python programming
+* [Bootstrap](https://getbootstrap.com)
+* [Bootstrap Templates](https://startbootstrap.com)
+* [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
+* [Django Filter And Pagination - Youtube by TauhidCodes](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s)
+* Code Institute Full Stack Framework tutorials
+
 ___
 ## Acknowledgment
+
+I would like to thank the following to support the development of this site.
+
+* Learning Support - Code Institute
+* Mentoring Support - Daisy McGirr
