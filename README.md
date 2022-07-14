@@ -520,8 +520,45 @@ ___
 ## Validator Testing
 ___
 ## Testing
+
+For this project, tests have been carried out using both Django Unit Tests and Manual Tests.
+
+**Django Unit Tests**
+
+These are automated tests by executing test scripts from the terminal. In this project, only URLs have been tested in this method.
+
+There are 10 URLs tests and they all passed the test.
+
+* Test 'home' url
+* Test 'popular country' url
+* Test 'posts by author' url
+* Test 'detail post' url
+* Test 'like/unlike' url
+* Test 'create new post' url
+* Test 'edit/update post' url
+* Test 'delete post' url
+* Test 'about' page url
+* Test 'contact us' page url
+
+*Test Results*
+
+![unit-tests-results](/readme/testing/unit-tests.png)
+
+**Manual Testing**
+
+Functional testing on this project has been carried out by executing the test scripts as defined below in the test report.
+
+**[Manual Tests Report (Click to view)](readme/testing/testing.md#manual-testing-for-travelogue22kw-project)**
+
 ___
 ## Bugs
+
+During testing, it was noticed that there is an 'Uncaught TypeError' showing in the console log. The error shown below indicates there is a problem with bootstrap. This error seems to be resolved by correcting the version of bootstrap. Futher monitoring is recommended to confirm this bug has fixed throughout the site.
+
+![bug-error-log-1](/readme/testing/bug-console-log1.jpg)
+
+![bug-error-log-2](/readme/testing/bug-console-log2.jpg)
+
 ___
 ## Deployment
 
