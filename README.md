@@ -9,7 +9,70 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 ![Screenshot on Mockup](readme/images/mockup.png)
 
 ---
+## Table of Contents
+* [Objectives](#objectives)
+    * [Apllication Goal](#application-goals)
+    * [User Goals](#user-goals)
+* [Application Design](#application-design)
+    * [Initial Design](#initial-design)
+    * [Design Approach](#design-approach)
+    * [Process Map](#process-map)
+* [Project Requirements](#project-requirements)
+* [Features](#features)
+    * [Frontend - Header and Footer](#frontend---header-and-footer)
+        * [Header for Non-Registered users](#header-for-registered-users)
+        * [Header for Registered Users](#header-for-registered-users)
+        * [Header for Administrators](#header-for-administrators)
+        * [Header and Footer with Collapsed Menu Bar For Mobile Devices](#header-and-footer-with-collapsed-menu-bar-for-mobile-devices)
+    * [Frontend - Home Page](#frontend---home-page)
+        * [Posts list in Home Page](#posts-list-in-home-page)
+        * [Users Access Rights to Posts](#users-access-rights-to-posts)
+            * [Access rights for Non-Registered users](#access-rights-for-non-registered-users)
+            * [Access rights for Registered users](#access-rights-for-non-registered-users)
+            * [Access rights for Administrators](#access-rights-for-administrators)
+        * [Responsive on Mobile Devices](#responsive-on-mobile-devices)
+        * [Filter Posts](#filter-posts)
+        * [Filter By Country](#filter-by-country)
+        * [Filter By Author](#filter-by-author)
+    * [Frontend - Create New Posts](#frontend---create-new-posts)
+    * [Frontend - Post Detail](#frontend---post-detail)
+        * [Users Access Rights to Post Detail](#users-access-rights-to-post-detail)
+            * [Access Rights for Non-Registered Users](#access-rights-for-non-registered-users-1)
+            * [Access Rights for Registered Users](#access-rights-for-registered-users-1)
+            * [Access Rights for Owner's Post](#access-rights-for-owners-post)
+    * [Frontend - Leave Comment to a Post](#frontend---leave-comment-to-a-post)
+    * [Frontend - Like/Unlike Post](#frontend---likeunlike-post)
+    * [Frontend - Edit Personal Post](#frontend---edit-personal-post)
+    * [Frontend - Delete Personal Post](#frontend---delete-personal-post)
+    * [Frontend - User Accounts](#frontend---user-accounts)
+        * [Create an Account](#create-an-account)
+        * [Sign in to an Account](#sign-in-to-an-account)
+        * [Sign out from Account](#sign-out-from-account)
+        * [View an Account Profile](#view-an-account-profile)
+        * [Update an Account Profile](#update-an-account-profile)
+        * [Change an Account Password](#change-an-account-password)
+        * [Delete an Account](#delete-an-account)
+    * [Frontend - About Page](#frontend---about-page)
+    * [Frontend - Contact us Page](#frontend---contact-us-page)
+    * [Frontend - Message Bar](#frontend---message-bar)
+    * [Backend - Administrator Control Panel](#backend---administrator-control-panel)
+        * [Blog Posts](#blog-posts)
+        * [Blog Post Comments](#blog-post-comments)
+        * [User Profiles](#user-profiles)
+* [Future Features](#future-features)
+* [Validator Testing](#validator-testing)
+* [Testing](#testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+    * [Development tools](#development-tools)
+    * [Development processes](#development-processes)
+    * [Deployment to Github Pages](#deployment-to-github-pages)
+    * [Steps for Setting up basic Django Project and Deploying to Heroku](#steps-for-setting-up-basic-django-project-and-deploying-to-heroku)
+* [Tools](#tools)
+* [Credits](#credits)
+* [Acknowledgment](#acknowledgment)
 
+---
 ## Objectives
 The main objective of this site is to provide a platform for travelers to keep a journal online and share it with families and friends as well as other travelers.
 
@@ -27,6 +90,8 @@ The target audients will be travelers who wants to post their journal and people
 * Registered users can maintain their personal posts.
 * Registered users can leave comments and like posts by other users.
 * Registered users can update and maintain their own account profile.
+
+*[Back to Contents](#table-of-contents)*
 
 ---
 ## Application Design
@@ -77,6 +142,9 @@ The following is the process map for the site. The site can be accessed by non-r
 *Site Process Map*
 
 ![Process Map](readme/images/process-map.jpg)
+
+*[Back to Contents](#table-of-contents)*
+
 ___
 
 ## Project Requirements
@@ -96,6 +164,9 @@ This project has been developed using Python Django, Bootstrap and Deployed in H
 * Django allauth
 * Heroku
 * Bootstrap v5.0.2
+
+*[Back to Contents](#table-of-contents)*
+
 ___
 
 ## Features
@@ -492,6 +563,8 @@ Following are customised features:
 
 This is the section to maintain the user profiles in the travelogue project. For this initial phase the profiles are only extension of the users from the Authentication and Authorization section. Additional features can be added to the profiles in future development.
 
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Future Features
 
@@ -516,8 +589,13 @@ The site can greatly improve by allowing multiple images to upload and display i
 
 Another feature is to create an image gallery so viewer can view all images by an author or a country.
 
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Validator Testing
+
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Testing
 
@@ -550,14 +628,18 @@ Functional testing on this project has been carried out by executing the test sc
 
 **[Manual Tests Report (Click to view)](readme/testing/testing.md#manual-testing-for-travelogue22kw-project)**
 
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Bugs
 
-During testing, it was noticed that there is an 'Uncaught TypeError' showing in the console log. The error shown below indicates there is a problem with bootstrap. This error seems to be resolved by correcting the version of bootstrap. Futher monitoring is recommended to confirm this bug has fixed throughout the site.
+During testing, it was noticed that there is an 'Uncaught TypeError' showing in the console log. The error shown below indicates there is a problem with bootstrap. This error seems to be resolved by correcting the version of bootstrap. Futher monitoring is recommended to confirm this bug has been fixed throughout the site.
 
 ![bug-error-log-1](/readme/testing/bug-console-log1.jpg)
 
 ![bug-error-log-2](/readme/testing/bug-console-log2.jpg)
+
+*[Back to Contents](#table-of-contents)*
 
 ___
 ## Deployment
@@ -608,6 +690,8 @@ The following are the steps to setting up Django project and deploying to Heroku
 ![Deployment-6](/readme/images/deployment-6.png)
 ![Deployment-7](/readme/images/deployment-7.png)
 
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Tools
 The tools used to carry out the development and deployment on this project are:
@@ -622,6 +706,8 @@ The tools used to carry out the development and deployment on this project are:
 * [Heroku](https://id.heroku.com/login) for building, deploying, and managing apps
 * [Pixerbay](https://pixabay.com/) for images
 
+*[Back to Contents](#table-of-contents)*
+
 ___
 ## Credits
 
@@ -632,6 +718,8 @@ ___
 * [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
 * [Django Filter And Pagination - Youtube by TauhidCodes](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s)
 * Code Institute Full Stack Framework tutorials
+
+*[Back to Contents](#table-of-contents)*
 
 ___
 ## Acknowledgment
