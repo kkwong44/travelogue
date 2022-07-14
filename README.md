@@ -15,6 +15,7 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
     * [User Goals](#user-goals)
 * [Application Design](#application-design)
     * [Initial Design](#initial-design)
+    * [Database Design](#database-design)
     * [Design Approach](#design-approach)
     * [Process Map](#process-map)
 * [Project Requirements](#project-requirements)
@@ -113,6 +114,10 @@ The following are initial wireframe designs to meet the main objective.
 *Wireframe - Post Detail Page*
 
 ![Wireframe on Post Detail Page](readme/images/wireframe-post-detail-page.jpg)
+
+### Database Design
+
+![Database Design](readme/images/database-models.jpg)
 
 ### Design Approach
 
