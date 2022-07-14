@@ -7,38 +7,38 @@
 
 {% block content %}
 
-        <!-- Include common template for page header and list the posts -->
-        {% include "blog/post_list.html" %}
-                <!-- Side widgets-->
-                <div class="col-lg-4 vh-100">
-                    <!-- Display current filtered is set by country -->
-                    <div class="card mb-4">
-                        {% for post in post_list %}
-                            {% if forloop.first %}
-                                <div class="card-header"><strong>Posts by Country: {{ post.country.name }}</strong></div>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="card-body">
-                            <div class="row">
-                                <!-- Set popular countries or reset filter -->
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="{% url 'home' %}">All</a></li>
-                                        <li><a href="{% url 'country_list' %}?country=FR">France</a></li>
-                                        <li><a href="{% url 'country_list' %}?country=IT">Italy</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="{% url 'country_list' %}?country=ES">Spain</a></li>
-                                        <li><a href="{% url 'country_list' %}?country=TR">Turkey</a></li>
-                                    </ul>
-                                </div>
+    <!-- Include common template for page header and list the posts -->
+    {% include "blog/post_list.html" %}
+            <!-- Side widgets-->
+            <div class="col-lg-4 vh-100">
+                <!-- Display current filtered is set by country -->
+                <div class="card mb-4">
+                    {% for post in post_list %}
+                        {% if forloop.first %}
+                            <div class="card-header"><strong>Posts by Country: {{ post.country.name }}</strong></div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Set popular countries or reset filter -->
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="{% url 'home' %}">All</a></li>
+                                    <li><a href="{% url 'country_list' %}?country=FR">France</a></li>
+                                    <li><a href="{% url 'country_list' %}?country=IT">Italy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="{% url 'country_list' %}?country=ES">Spain</a></li>
+                                    <li><a href="{% url 'country_list' %}?country=TR">Turkey</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 {%endblock%}

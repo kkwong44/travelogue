@@ -35,7 +35,7 @@ class TestUrls(SimpleTestCase):
 
     def test_post_detail_url_is_resolved(self):
         '''
-        Test detap post url
+        Test detail post url
         '''
         url = reverse('post_detail', args=['UUID'])
         self.assertEqual(resolve(url).func.view_class, PostDetail)

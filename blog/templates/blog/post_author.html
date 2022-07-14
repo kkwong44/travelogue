@@ -7,33 +7,33 @@
 
 {% block content %}
 
-        <!-- Include common template for page header and list the posts -->
-        {% include "blog/post_list.html" %}
-                <!-- Side widgets Author -->
-                <div class="col-lg-4 vh-100">
-                    <div class="card mb-4">
-                        <!-- Display current filtered is set by author -->
-                        <!-- Option to reset filter -->
-                        {% for post in post_list %}
-                            {% if forloop.first %}
-                                {% if user.username == post.author %}
-                                    <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
-                                {% else %}
-                                    <div class="card-header"><strong>Posts by Author: {{ post.author }}</strong></div>
-                                {% endif %}
-                                <div class="card-body">                        
-                                    <a href="{% url 'home' %}">All</a>
-                                </div>
+    <!-- Include common template for page header and list the posts -->
+    {% include "blog/post_list.html" %}
+            <!-- Side widgets Author -->
+            <div class="col-lg-4 vh-100">
+                <div class="card mb-4">
+                    <!-- Display current filtered is set by author -->
+                    <!-- Option to reset filter -->
+                    {% for post in post_list %}
+                        {% if forloop.first %}
+                            {% if user.username == post.author %}
+                                <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
+                            {% else %}
+                                <div class="card-header"><strong>Posts by Author: {{ post.author }}</strong></div>
                             {% endif %}
-                        {% empty %}
-                            <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
                             <div class="card-body">                        
                                 <a href="{% url 'home' %}">All</a>
                             </div>
-                        {% endfor %}
-                    </div>
+                        {% endif %}
+                    {% empty %}
+                        <div class="card-header"><strong>Posts by Author: {{ user.username }}</strong></div>
+                        <div class="card-body">                        
+                            <a href="{% url 'home' %}">All</a>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
+    </div>
 
 {%endblock%}

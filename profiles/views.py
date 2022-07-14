@@ -18,7 +18,7 @@ class EditProfile(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
 
     def form_valid(self, form):
         '''
-        Validate user access rights to edit profile
+        Form to update profile
         '''
         messages.success(
             self.request, 'Your profile has been successfully updated.')
@@ -42,7 +42,7 @@ class DeleteUser(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
 
     def delete(self, request, *args, **kwargs):
         '''
-        Overwrite message method
+        Delete and overwrite message method
         '''
         response = super().delete(request, *args, **kwargs)
         messages.success(

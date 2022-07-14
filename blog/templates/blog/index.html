@@ -4,41 +4,41 @@
 
 {% block content %}
 
-        <!-- Include common template for page header and list the posts -->
-        {% include "blog/post_list.html" %}
-                <!-- Side widgets-->
-                <div class="col-lg-4">
-                    <!-- Author widget-->
-                    {% if user.is_authenticated %}
-                        <div class="card mb-4">
-                            <div class="card-header">My Posts</div>
-                            <div class="card-body">
-                                <a href="{% url 'author_list' %}?author={{ user.id }}">{{ user.username }}</a>
-                            </div>
-                        </div>
-                    {% endif %}
-                    <!-- Popular Countries widget-->
+    <!-- Include common template for page header and list the posts -->
+    {% include "blog/post_list.html" %}
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Author widget-->
+                {% if user.is_authenticated %}
                     <div class="card mb-4">
-                        <div class="card-header">Popular Countries</div>
+                        <div class="card-header">My Posts</div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="{% url 'country_list' %}?country=FR">France</a></li>
-                                        <li><a href="{% url 'country_list' %}?country=IT">Italy</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="{% url 'country_list' %}?country=ES">Spain</a></li>
-                                        <li><a href="{% url 'country_list' %}?country=TR">Turkey</a></li>
-                                    </ul>
-                                </div>
+                            <a href="{% url 'author_list' %}?author={{ user.id }}">{{ user.username }}</a>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- Popular Countries widget-->
+                <div class="card mb-4">
+                    <div class="card-header">Popular Countries</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="{% url 'country_list' %}?country=FR">France</a></li>
+                                    <li><a href="{% url 'country_list' %}?country=IT">Italy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li><a href="{% url 'country_list' %}?country=ES">Spain</a></li>
+                                    <li><a href="{% url 'country_list' %}?country=TR">Turkey</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 {%endblock%}

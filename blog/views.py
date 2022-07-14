@@ -132,7 +132,7 @@ class PostUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
 
     def form_valid(self, form):
         '''
-        Validate user access rights to create post
+        Form to Update post
         '''
         messages.success(
             self.request, 'Your post has been successfully updated.')
@@ -155,6 +155,9 @@ class PostDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     success_url = '/'
 
     def delete(self, request, *args, **kwargs):
+        '''
+        Delete post
+        '''
         response = super().delete(request, *args, **kwargs)
         messages.success(
             self.request, 'Your post has been deleted sucessfully!')

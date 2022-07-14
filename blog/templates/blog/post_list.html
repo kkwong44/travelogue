@@ -1,81 +1,81 @@
 <!-- Common template for head banner and list the posts -->
 
-        <!-- Page header with logo and tagline-->
-        <header class="py-5 bg-light border-bottom mb-4">
-            <div class="container">
-                <div class="text-center my-1">
-                    <h1 class="fw-bolder">Welcome to World Travelogue!</h1>
-                    <p class="lead mb-0">A community to share your travel experiences</p>
-                </div>
-            </div>
-        </header>
-        <!-- Page content-->
+    <!-- Page header with logo and tagline-->
+    <header class="py-5 bg-light border-bottom mb-4">
         <div class="container">
-            <div class="row">
-                <!-- Blog entries-->
-                <div class="col-lg-8">
-                    <!-- Nested row for blog posts-->
-                    <div class="row">
-                        {% for post in post_list %}
-                            <div class="col-lg-6 mb-4">
-                                <!-- Blog post-->
-                                <div class="card h-100">
-                                    <!-- Blog image -->
-                                    {% if "placeholder" in post.featured_image.url %}
-                                        <a href="{% url 'post_detail' post.id %}">
-                                            <img class="card-img-top"
-                                                src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
-                                                alt="Defalut Travelogue Image For {{ post.title }}">
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'post_detail' post.id %}">
-                                            <img class="card-img-top" src=" {{ post.featured_image.url }}"
-                                                alt="Travelogue Image For {{ post.title }}">
-                                        </a>
-                                    {% endif %}
-                                    <!-- Blog details -->
-                                    <div class="card-body">
-                                        <div>
-                                            <a class="small text-decoration-none"
-                                                href="{% url 'author_list' %}?author={{ post.author.id }}">Author:
-                                                {{ post.author }}</a>
-                                        </div>
-                                        <div>
-                                            <a class="small text-decoration-none"
-                                                href="{% url 'country_list' %}?country={{ post.country }}">Country:
-                                                {{ post.country.name }}</a>
-                                        </div>
-                                        <h2 class="card-title h4">{{ post.title }}</h2>
-                                        <p class="card-text">{{ post.excerpt }}</p>
-                                        <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
-                                        <hr>
-                                        <!-- Total likes for the blog -->
-                                        {% if post.number_of_likes > 0 %}
-                                            <p class="card-text text-muted h6">{{ post.created_on }} <i
-                                                class="fas fa-heart btn-like"></i> {{ post.number_of_likes }}</p>
-                                        {% else %}
-                                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
-                                                {{ post.number_of_likes }}</p>
-                                        {% endif%}
-                                        <hr>
+            <div class="text-center my-1">
+                <h1 class="fw-bolder">Welcome to World Travelogue!</h1>
+                <p class="lead mb-0">A community to share your travel experiences</p>
+            </div>
+        </div>
+    </header>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <!-- Blog entries-->
+            <div class="col-lg-8">
+                <!-- Nested row for blog posts-->
+                <div class="row">
+                    {% for post in post_list %}
+                        <div class="col-lg-6 mb-4">
+                            <!-- Blog post-->
+                            <div class="card h-100">
+                                <!-- Blog image -->
+                                {% if "placeholder" in post.featured_image.url %}
+                                    <a href="{% url 'post_detail' post.id %}">
+                                        <img class="card-img-top"
+                                            src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
+                                            alt="Defalut Travelogue Image For {{ post.title }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'post_detail' post.id %}">
+                                        <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                            alt="Travelogue Image For {{ post.title }}">
+                                    </a>
+                                {% endif %}
+                                <!-- Blog details -->
+                                <div class="card-body">
+                                    <div>
+                                        <a class="small text-decoration-none"
+                                            href="{% url 'author_list' %}?author={{ post.author.id }}">Author:
+                                            {{ post.author }}</a>
                                     </div>
+                                    <div>
+                                        <a class="small text-decoration-none"
+                                            href="{% url 'country_list' %}?country={{ post.country }}">Country:
+                                            {{ post.country.name }}</a>
+                                    </div>
+                                    <h2 class="card-title h4">{{ post.title }}</h2>
+                                    <p class="card-text">{{ post.excerpt }}</p>
+                                    <a class="btn btn-primary" href="{% url 'post_detail' post.id %}">Read more →</a>
+                                    <hr>
+                                    <!-- Total likes for the blog -->
+                                    {% if post.number_of_likes > 0 %}
+                                        <p class="card-text text-muted h6">{{ post.created_on }} <i
+                                            class="fas fa-heart btn-like"></i> {{ post.number_of_likes }}</p>
+                                    {% else %}
+                                        <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
+                                            {{ post.number_of_likes }}</p>
+                                    {% endif%}
+                                    <hr>
                                 </div>
                             </div>
-                            {% empty %}
-                            <h2 class="card-title h4">No Posts Found!</h2>
-                        {% endfor %}
-                    </div>
-                    <!-- Pagination-->
-                    {% if is_paginated %}
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination justify-content-center">
-                                {% if page_obj.has_previous %}
-                                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-                                {% endif %}
-                                {% if page_obj.has_next %}
-                                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-                                {% endif %}
-                            </ul>
-                        </nav>
-                    {% endif %}
+                        </div>
+                        {% empty %}
+                        <h2 class="card-title h4">No Posts Found!</h2>
+                    {% endfor %}
                 </div>
+            <!-- Pagination-->
+            {% if is_paginated %}
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+                        {% endif %}
+                        {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </div>
