@@ -27,7 +27,7 @@
     <!-- Post Details -->
     <div class="container">
         <div class="row">
-            <div class="col col-md-2 card-comment mb-4  mt-3 left  top">
+            <div class="col-md-2 card-comment mb-4  mt-3 left  top">
                 <!-- The featured image or default image -->
                 {% if "placeholder" in post.featured_image.url %}
                     <img class="img-banner"
@@ -38,7 +38,7 @@
                         alt="Travelogue Image For {{ post.title }}" width="100%">
                 {% endif %}
             </div>
-            <div class="col col-md-10 card-comment mb-4  mt-3 left  top">
+            <div class="col-md-10 card-comment mb-4  mt-3 left  top">
                 <div class="card-body">
                     <!-- Show Edit and Delete buttons for owner -->
                     {% if request.user == post.author %}
