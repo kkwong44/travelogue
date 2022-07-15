@@ -17,6 +17,8 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
     * [Initial Design](#initial-design)
     * [Database Design](#database-design)
     * [Design Approach](#design-approach)
+        * [User Stories](#user-stories)
+        * [Kanban Board](#kanban-board)
     * [Process Map](#process-map)
 * [Project Requirements](#project-requirements)
 * [Features](#features)
@@ -124,7 +126,7 @@ The development approach on this project is based on the Principles of Agile and
 
 The design has broken down into User Stories and grouped into Epics. Each User Story has been allocated its priority, story point and set acceptance criteria and tasks. Timeboxing approach will be used to process the product backlog.
 
-**User Stories**
+#### User Stories
 
 There are 37 user stories identified at the beginning of the project and they were grouped into 7 Epics as listed in the table below.
 
@@ -134,7 +136,7 @@ There are 37 user stories identified at the beginning of the project and they we
 
 ![Summary of User Stories](readme/user-stories/user-stories-summary.jpg)
 
-**Kanban Board**
+#### Kanban Board
 
 In development, Kanban Board was used to schedule the execution of the user stories. This approach allows to allocating user stories by priority and monitoring each user story's progress.
 
@@ -213,9 +215,9 @@ Users should be able to navigate and find information easily.
 
 To help users to navigate and find information easily, all pages have a header with a navigation bar and a footer. The navigation bar items are depending on user access rights. Footer is where users can find the link to "Contact us" page and links to social media platform. Each social media link will be opened in a separate window.
 
-***[User Story #17 - As a Site User I can click the social media links so that I can only view the social media accounts that associated to this site](readme/user-stories/user-stories.md#user-story-17)***
-
 All page footers are the same.
+
+***[User Story #17 - As a Site User I can click the social media links so that I can only view the social media accounts that associated to this site](readme/user-stories/user-stories-17.jpg)***
 
 #### Header and Footer for Non-Registered users
 
@@ -229,7 +231,7 @@ All page footers are the same.
 
 #### Header and Footer for Registered Users
 
-***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
+***[User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction](readme/user-stories/user-stories-13.jpg)***
 
 * Menu Items:
     * Home___New Post___User Profile___About___Logout
@@ -238,7 +240,7 @@ All page footers are the same.
 
 #### Header and Footer for Administrators
 
-***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
+***[User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction](readme/user-stories/user-stories-14.jpg)***
 
 * Menu Items:
     * Home___New Post___User Profile___About___Control Panel___Logout
@@ -251,13 +253,13 @@ All page footers are the same.
 
 ### Frontend - Home Page
 
-***User Story #21 As a Site User I can view the list of posts so that I can read the posts***
-
 Users should able to view posts when they visiting this site.
 
 When users visiting this site, they should be landed onto the home page. The home page is where all the published posts are listed and the site has set a maximum of 4 posts per page. Navigation buttons are available to select next and previous page when there are more than 4 posts.
 
 #### Posts list in Home Page
+
+***[User Story #21 As a Site User I can view the list of posts so that I can read the posts](readme/user-stories/user-stories-21.jpg)***
 
 Each Post has the following layout:
 
@@ -278,7 +280,7 @@ Different user groups have different access rights to the posts.
 
 #### *Access rights for Non-Registered users*
 
-***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+***[User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts](readme/user-stories/user-stories-7.jpg)***
 
 * Allow to register as a site member by clicking the "Register" from the menu bar
 * Read about the site by clicking the "About" from the menu bar
@@ -291,7 +293,7 @@ Different user groups have different access rights to the posts.
 
 #### *Access rights for Registered users*
 
-***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
+***[User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction](readme/user-stories/user-stories-13.jpg)***
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -306,7 +308,7 @@ Different user groups have different access rights to the posts.
 
 #### *Access rights for Administrators*
 
-***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
+***[User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction](readme/user-stories/user-stories-14.jpg)***
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -334,7 +336,7 @@ This site can narrow down the posts by offering filters to the users by Country 
 
 #### Filter By Country
 
-***User Story #22 - As a Site User I can select a popular country so that I can only read posts from selected country***
+***[User Story #22 - As a Site User I can select a popular country so that I can only read posts from selected country](readme/user-stories/user-stories-22.jpg)***
 
 Select a country from the side widget for "Popular Countries" or the country from a post. All the posts related to the selected country will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected country and the side widget shows the current filter is set to the selected country. Select "All" to clear the current filter.
 
@@ -342,9 +344,9 @@ Select a country from the side widget for "Popular Countries" or the country fro
 
 #### Filter By Author
 
-***User Story #29 - As a Registered Site User I can filter the posts so that I can only see my posts***
+***[User Story #29 - As a Registered Site User I can filter the posts so that I can only see my posts](readme/user-stories/user-stories-29.jpg)***
 
-***User Story #30 - As a Site User I can filter the posts by author so that I can follow the author posts***
+***[User Story #30 - As a Site User I can filter the posts by author so that I can follow the author posts](readme/user-stories/user-stories-30.jpg)***
 
 Select your own posts from the side widget for "My Posts" or an author from a post. All the posts related to the selected author will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected author and the side widget shows the current filter is set to the selected author. Select "All" to clear the current filter.
 
@@ -352,7 +354,7 @@ Select your own posts from the side widget for "My Posts" or an author from a po
 
 ### Frontend - Create New Posts
 
-***User Story #24 - As a Registered Site User I can submit a new post so that my post can be viewed by other users***
+***[User Story #24 - As a Registered Site User I can submit a new post so that my post can be viewed by other users](readme/user-stories/user-stories-24.jpg)***
 
 Registered users should allow to create new personal posts.
 
@@ -366,7 +368,7 @@ Create a New Post form is presented to the user and all the mandatory fields nee
 
 ### Frontend - Post Detail
 
-***User Story #21 - As a Site User I can view the list of posts so that I can read the posts***
+***[User Story #21 - As a Site User I can view the list of posts so that I can read the posts](readme/user-stories/user-stories-21.jpg)***
 
 Users should able to access the detail of each post.
 
@@ -395,7 +397,7 @@ Different user groups have different access rights to the post detail.
 
 #### *Access Rights for Non-Registered Users*
 
-***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+***[User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts](readme/user-stories/user-stories-7.jpg)***
 
 * View post details only
 * View comments only
@@ -404,9 +406,9 @@ Different user groups have different access rights to the post detail.
 
 #### *Access Rights for Registered Users*
 
-***User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post***
+***[User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post](readme/user-stories/user-stories-25.jpg)***
 
-***User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post***
+***[User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post](readme/user-stories/user-stories-26.jpg)***
 
 * View post details
 * Leave comment to any post
@@ -416,7 +418,7 @@ Different user groups have different access rights to the post detail.
 
 #### *Access Rights for Owner's Post*
 
-***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
+***[User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction](readme/user-stories/user-stories-13.jpg)***
 
 * View post details
 * Leave comment to any post
@@ -428,7 +430,7 @@ Different user groups have different access rights to the post detail.
 
 ### Frontend - Leave Comment to a Post
 
-***User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post***
+***[User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post](readme/user-stories/user-stories-25.jpg)***
 
 Registered users should able to comment any posts
 
@@ -442,7 +444,7 @@ In this example, the author submitted a comment "Very tasty" and it appears on t
 
 ### Frontend - Like/Unlike Post
 
-***User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post***
+***[User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post](readme/user-stories/user-stories-26.jpg)***
 
 Registered users should able to like/unlike any posts
 
@@ -456,7 +458,7 @@ The option to like or unlike a post is available in the detail post and it is in
 
 ### Frontend - Edit Personal Post
 
-***User Story #27 - As a Registered Site User I can select one of my post so that I can edit and update my post***
+***[User Story #27 - As a Registered Site User I can select one of my post so that I can edit and update my post](readme/user-stories/user-stories-27.jpg)***
 
 Registered users should able to edit and update personal posts
 
@@ -468,7 +470,7 @@ When the registered user signed in to the site and select a personal post then t
 
 ### Frontend - Delete Personal Post
 
-***User Story #28 - As a Registered Site User I can select one of my post so that I can delete my post from the list***
+***[User Story #28 - As a Registered Site User I can select one of my post so that I can delete my post from the list](readme/user-stories/user-stories-28.jpg)***
 
 Registered users should able to delete personal posts
 
@@ -486,7 +488,7 @@ The site allows viewers to create an account. After signed in to the account, th
 
 #### Create an Account
 
-***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+***[User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts](readme/user-stories/user-stories-7.jpg)***
 
 Select Register from the menu bar, fill and submit the form.
 
@@ -494,7 +496,7 @@ Select Register from the menu bar, fill and submit the form.
 
 #### Sign in to an Account
 
-***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
+***[User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction](readme/user-stories/user-stories-13.jpg)***
 
 Select Login from the menu bar,  fill and submit user details
 
@@ -502,7 +504,7 @@ Select Login from the menu bar,  fill and submit user details
 
 #### Sign out from Account
 
-***User Story #15 - As a Site User/Admin I can logout the site so that I can protect my posts***
+***[User Story #15 - As a Site User/Admin I can logout the site so that I can protect my posts](readme/user-stories/user-stories-15.jpg)***
 
 Select Logout from the menu bar and confirm sign out.
 
@@ -510,7 +512,7 @@ Select Logout from the menu bar and confirm sign out.
 
 #### View an Account Profile
 
-***User Story #8 - As a Site User I can view my own profile so that I can check details on my profile are correct***
+***[User Story #8 - As a Site User I can view my own profile so that I can check details on my profile are correct](readme/user-stories/user-stories-8.jpg)***
 
 Login and select User Profile from the menu bar
 
@@ -518,7 +520,7 @@ Login and select User Profile from the menu bar
 
 #### Update an Account Profile
 
-***User Story #9 - As a Site User I can edit my own profile so that I can update details on my profile***
+***[User Story #9 - As a Site User I can edit my own profile so that I can update details on my profile](readme/user-stories/user-stories-9.jpg)***
 
 Login and select User Profile from the menu bar
 
@@ -528,7 +530,7 @@ Edit and select Update to update profile
 
 #### Change an Account Password
 
-***User Story #11 - As a Site User I can change my password so that I can secure my account***
+***[User Story #11 - As a Site User I can change my password so that I can secure my account](readme/user-stories/user-stories-11.jpg)***
 
 Login and select User Profile from the menu bar
 
@@ -540,7 +542,7 @@ Fill details and submit changes
 
 #### Delete an Account
 
-***User Story #10 - As a Site User I can delete my account so that I can leave the site permanently***
+***[User Story #10 - As a Site User I can delete my account so that I can leave the site permanently](readme/user-stories/user-stories-10.jpg)***
 
 Login and select User Profile from the menu bar
 
@@ -550,7 +552,7 @@ Select Delete and confirm delete account
 
 ### Frontend - About Page
 
-***User Story #16 - As a Site User I can navigate to about page so that I can only read about the purpose of this site***
+***[User Story #16 - As a Site User I can navigate to about page so that I can only read about the purpose of this site](readme/user-stories/user-stories-16.jpg)***
 
 Users should able to find more information about the site.
 
@@ -560,7 +562,7 @@ The About page offer information about the site and the user can access it by se
 
 ### Frontend - Contact us Page
 
-***User Story #18 - As a Site User I can navigate to contact page so that I can get the contact details for this site***
+***[User Story #18 - As a Site User I can navigate to contact page so that I can get the contact details for this site](readme/user-stories/user-stories-18.jpg)***
 
 Users should able to contact the site support team.
 
@@ -580,7 +582,7 @@ On this site, a message bar has been created to confirm action has been performe
 
 ### Backend - Administrator Control Panel
 
-***User Story #32 - As a Site Admin I can login to admin page so that I can manage users access***
+***[User Story #32 - As a Site Admin I can login to admin page so that I can manage users access](readme/user-stories/user-stories-32.jpg)***
 
 Site administrators need a facility to maintain users, posts and comments.
 
@@ -590,7 +592,7 @@ Site superuser account need to be created in order to access to the control pane
 
 **Control Panel - Login Page**
 
-***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
+***[User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction](readme/user-stories/user-stories-14.jpg)***
 
 ![Control-Panel-login](/readme/images/control-panel-login.png)
 
@@ -600,11 +602,11 @@ Site superuser account need to be created in order to access to the control pane
 
 #### Blog Posts
 
-***User Story #33 - As a Site Admin I can login to admin page so that I can create, read, update and delete posts***
+***[User Story #33 - As a Site Admin I can login to admin page so that I can create, read, update and delete posts](readme/user-stories/user-stories-33.jpg)***
 
-***User Story #34 - As a Site Admin I can create a new post so that the post can be viewed***
+***[User Story #34 - As a Site Admin I can create a new post so that the post can be viewed](readme/user-stories/user-stories-34.jpg)***
 
-***User Story #35 - As a Site Admin I can disapprove new posts so that I can safeguard users from harmful contents***
+***[User Story #35 - As a Site Admin I can disapprove new posts so that I can safeguard users from harmful contents](readme/user-stories/user-stories-35.jpg)***
 
 This is the section to maintain the posts in the blog application. The standard features in this section allows to Create, Read, Update and Delete posts.
 
@@ -625,9 +627,9 @@ Following are customised features:
 
 #### Blog Post Comments
 
-***User Story #36 - As a Site Admin I can login to admin page so that I can manage comments***
+***[User Story #36 - As a Site Admin I can login to admin page so that I can manage comments](readme/user-stories/user-stories-36.jpg)***
 
-***User Story #37 - As a Site Admin I can approve or disapprove comments so that I can decide which comment can be published***
+***[User Story #37 - As a Site Admin I can approve or disapprove comments so that I can decide which comment can be published](readme/user-stories/user-stories-37.jpg)***
 
 This is the section to maintain the comments in the blog application. The standard features in this section allows to Create, Read, Update and Delete comments.
 
@@ -659,15 +661,15 @@ Five user stories were decided not to be included at the initial phase of the pr
 
 The user stories are:
 
-* User Story #12 - Reset Password
+* [User Story #12 - Reset Password](readme/user-stories/user-stories-12.jpg)
     * User able to reset forgotten password
-* User Story #23 - Filter by Country
+* [User Story #23 - Filter by Country](readme/user-stories/user-stories-23.jpg)
     * User able to filter posts from list of all countries
-* User Story #31 - Sort Posts
+* [User Story #31 - Sort Posts](readme/user-stories/user-stories-31.jpg)
     * User able to sort posts by fields such as date and country
-* User Story #19 - Contact Form
+* [User Story #19 - Contact Form](readme/user-stories/user-stories-19.jpg)
     * Provide users a contact form
-* User Story #20 - Response to Request
+* [User Story #20 - Response to Request](readme/user-stories/user-stories-20.jpg)
     * Initial response to contact form automatically by email
 
 As mentioned in the features section that current User Profiles is only an extension of users from Django table. The intention of the user profiles is to provide additional future features such as user’s photo or avatar, social media accounts and date joined as a member.
