@@ -21,9 +21,9 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 * [Project Requirements](#project-requirements)
 * [Features](#features)
     * [Frontend - Header and Footer](#frontend---header-and-footer)
-        * [Header for Non-Registered users](#header-for-registered-users)
-        * [Header for Registered Users](#header-for-registered-users)
-        * [Header for Administrators](#header-for-administrators)
+        * [Header for and Footer Non-Registered users](#header-and-footer-for-non-registered-users)
+        * [Header for and Footer Registered Users](#header-and-footer-for-registered-users)
+        * [Header for and Footer Administrators](#header-and-footer-for-administrators)
         * [Header and Footer with Collapsed Menu Bar For Mobile Devices](#header-and-footer-with-collapsed-menu-bar-for-mobile-devices)
     * [Frontend - Home Page](#frontend---home-page)
         * [Posts list in Home Page](#posts-list-in-home-page)
@@ -162,19 +162,19 @@ ___
 
 This project has been developed using Python Django, Bootstrap and Deployed in Heroku. The following are the project requirements in order to run the application.
 
-* Django
-* Gunicorn
-* dj_databases_url
-* Psycopg2
-* Cloudinary
-* dj3_cloudinary_storage
-* PostgreSQL
-* Django summernote
-* Django countries
-* Django crispy Forms
-* Django allauth
-* Heroku
-* Bootstrap v5.0.2
+* Django - a high-level Python web framework
+* Gunicorn - a Web Server Gateway Interface (WSGI) to run Python web applications
+* dj_databases_url - a simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+* Psycopg2 - PostgreSQL database adapter for the Python programming language
+* Cloudinary - Online platform to store images for this application
+* dj3_cloudinary_storage - django package that facilitates integration with Cloudinary by implementing Django Storage API.
+* PostgreSQL - an open source object-relational database system
+* Django summernote - is a simple WYSIWYG editor
+* Django countries - an application that provides country choices for use with forms, flag icons static files, and a country field for models.
+* Django crispy forms - an application that helps to manage Django forms.
+* Django allauth - integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+* Heroku - a platform as a service that enables developers to build, run, and operate applications entirely in the cloud.
+* Bootstrap v5.0.2 - an open-source CSS framework directed at responsive, mobile-first front-end web development.
 
 *[Back to Contents](#table-of-contents)*
 
@@ -213,7 +213,13 @@ Users should be able to navigate and find information easily.
 
 To help users to navigate and find information easily, all pages have a header with a navigation bar and a footer. The navigation bar items are depending on user access rights. Footer is where users can find the link to "Contact us" page and links to social media platform. Each social media link will be opened in a separate window.
 
-#### Header for Non-Registered users
+***[User Story #17 - As a Site User I can click the social media links so that I can only view the social media accounts that associated to this site](readme/user-stories/user-stories.md#user-story-17)***
+
+All page footers are the same.
+
+#### Header and Footer for Non-Registered users
+
+***[User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts](readme/user-stories/user-stories-7.jpg)***
 
 * Menu Items:
 
@@ -221,14 +227,18 @@ To help users to navigate and find information easily, all pages have a header w
 
 ![header-non-registered](/readme/images/header-footer-non-registered.png)
 
-#### Header for Registered Users
+#### Header and Footer for Registered Users
+
+***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
 
 * Menu Items:
     * Home___New Post___User Profile___About___Logout
 
 ![header-registered](/readme/images/header-footer-registered.png)
 
-#### Header for Administrators
+#### Header and Footer for Administrators
+
+***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
 
 * Menu Items:
     * Home___New Post___User Profile___About___Control Panel___Logout
@@ -240,6 +250,8 @@ To help users to navigate and find information easily, all pages have a header w
 ![header-collapsed](/readme/images/header-footer-collapsed.png)
 
 ### Frontend - Home Page
+
+***User Story #21 As a Site User I can view the list of posts so that I can read the posts***
 
 Users should able to view posts when they visiting this site.
 
@@ -266,6 +278,8 @@ Different user groups have different access rights to the posts.
 
 #### *Access rights for Non-Registered users*
 
+***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+
 * Allow to register as a site member by clicking the "Register" from the menu bar
 * Read about the site by clicking the "About" from the menu bar
 * View individual post by clicking the "Read More" button from a post
@@ -276,6 +290,8 @@ Different user groups have different access rights to the posts.
 ![home-page-non-registered](/readme/images/home-page-non-registered.png)
 
 #### *Access rights for Registered users*
+
+***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -289,6 +305,8 @@ Different user groups have different access rights to the posts.
 ![home-page-registered](/readme/images/home-page-registered.png)
 
 #### *Access rights for Administrators*
+
+***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
 
 * Allow to login to the site by clicking the "Login" from the menu bar
 * Allow to create a new post by clicking the "New Post" from the menu bar
@@ -316,17 +334,25 @@ This site can narrow down the posts by offering filters to the users by Country 
 
 #### Filter By Country
 
+***User Story #22 - As a Site User I can select a popular country so that I can only read posts from selected country***
+
 Select a country from the side widget for "Popular Countries" or the country from a post. All the posts related to the selected country will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected country and the side widget shows the current filter is set to the selected country. Select "All" to clear the current filter.
 
 ![posts-filtered-by-country](/readme/images/posts-by-country.png)
 
 #### Filter By Author
 
+***User Story #29 - As a Registered Site User I can filter the posts so that I can only see my posts***
+
+***User Story #30 - As a Site User I can filter the posts by author so that I can follow the author posts***
+
 Select your own posts from the side widget for "My Posts" or an author from a post. All the posts related to the selected author will return as a new list. A message will say "No Posts Found!" when there are no posts for the selected author and the side widget shows the current filter is set to the selected author. Select "All" to clear the current filter.
 
 ![posts-filtered-by-country](/readme/images/posts-by-author.png)
 
 ### Frontend - Create New Posts
+
+***User Story #24 - As a Registered Site User I can submit a new post so that my post can be viewed by other users***
 
 Registered users should allow to create new personal posts.
 
@@ -339,6 +365,8 @@ Create a New Post form is presented to the user and all the mandatory fields nee
 ![post-create](/readme/images/post-create.png)
 
 ### Frontend - Post Detail
+
+***User Story #21 - As a Site User I can view the list of posts so that I can read the posts***
 
 Users should able to access the detail of each post.
 
@@ -367,12 +395,18 @@ Different user groups have different access rights to the post detail.
 
 #### *Access Rights for Non-Registered Users*
 
+***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+
 * View post details only
 * View comments only
 
 ![post-detail-non-registered](/readme/images/post-detail-non-registered.png)
 
 #### *Access Rights for Registered Users*
+
+***User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post***
+
+***User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post***
 
 * View post details
 * Leave comment to any post
@@ -381,6 +415,8 @@ Different user groups have different access rights to the post detail.
 ![post-detail-registered](/readme/images/post-detail-registered.png)
 
 #### *Access Rights for Owner's Post*
+
+***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
 
 * View post details
 * Leave comment to any post
@@ -391,6 +427,8 @@ Different user groups have different access rights to the post detail.
 ![post-detail-non-registered](/readme/images/post-detail-owner.png)
 
 ### Frontend - Leave Comment to a Post
+
+***User Story #25 - As a Registered Site User I can click on a post to leave comments so that I can join the conservation about the post***
 
 Registered users should able to comment any posts
 
@@ -404,6 +442,8 @@ In this example, the author submitted a comment "Very tasty" and it appears on t
 
 ### Frontend - Like/Unlike Post
 
+***User Story #26 - As a Registered Site User I can click on a post so that I can like or unlike the post***
+
 Registered users should able to like/unlike any posts
 
 The option to like or unlike a post is available in the detail post and it is in a form of a "Heart" shape.
@@ -416,6 +456,8 @@ The option to like or unlike a post is available in the detail post and it is in
 
 ### Frontend - Edit Personal Post
 
+***User Story #27 - As a Registered Site User I can select one of my post so that I can edit and update my post***
+
 Registered users should able to edit and update personal posts
 
 When the registered user signed in to the site and select a personal post then the post can be updated by submitting the form.
@@ -425,6 +467,8 @@ When the registered user signed in to the site and select a personal post then t
 ![edit-post](/readme/images/post-edit.png)
 
 ### Frontend - Delete Personal Post
+
+***User Story #28 - As a Registered Site User I can select one of my post so that I can delete my post from the list***
 
 Registered users should able to delete personal posts
 
@@ -442,11 +486,15 @@ The site allows viewers to create an account. After signed in to the account, th
 
 #### Create an Account
 
+***User Story #7 - As a Site User I can register to the site so that I can create an account to view, comment and like or unlike posts***
+
 Select Register from the menu bar, fill and submit the form.
 
 ![account-create](/readme/images/account-register.png)
 
 #### Sign in to an Account
+
+***User Story #13 - As a Site User I can login to the site so that I can create, update and delete my posts with restriction***
 
 Select Login from the menu bar,  fill and submit user details
 
@@ -454,17 +502,23 @@ Select Login from the menu bar,  fill and submit user details
 
 #### Sign out from Account
 
+***User Story #15 - As a Site User/Admin I can logout the site so that I can protect my posts***
+
 Select Logout from the menu bar and confirm sign out.
 
 ![account-logout](/readme/images/account-logout.png)
 
 #### View an Account Profile
 
+***User Story #8 - As a Site User I can view my own profile so that I can check details on my profile are correct***
+
 Login and select User Profile from the menu bar
 
 ![user-profile-read](/readme/images/user-profile.png)
 
 #### Update an Account Profile
+
+***User Story #9 - As a Site User I can edit my own profile so that I can update details on my profile***
 
 Login and select User Profile from the menu bar
 
@@ -473,6 +527,8 @@ Edit and select Update to update profile
 ![user-profile-update](/readme/images/user-profile.png)
 
 #### Change an Account Password
+
+***User Story #11 - As a Site User I can change my password so that I can secure my account***
 
 Login and select User Profile from the menu bar
 
@@ -484,6 +540,8 @@ Fill details and submit changes
 
 #### Delete an Account
 
+***User Story #10 - As a Site User I can delete my account so that I can leave the site permanently***
+
 Login and select User Profile from the menu bar
 
 Select Delete and confirm delete account
@@ -492,6 +550,8 @@ Select Delete and confirm delete account
 
 ### Frontend - About Page
 
+***User Story #16 - As a Site User I can navigate to about page so that I can only read about the purpose of this site***
+
 Users should able to find more information about the site.
 
 The About page offer information about the site and the user can access it by selecting "About" from the menu bar.
@@ -499,6 +559,8 @@ The About page offer information about the site and the user can access it by se
 ![about-page](/readme/images/about-page.png)
 
 ### Frontend - Contact us Page
+
+***User Story #18 - As a Site User I can navigate to contact page so that I can get the contact details for this site***
 
 Users should able to contact the site support team.
 
@@ -518,6 +580,8 @@ On this site, a message bar has been created to confirm action has been performe
 
 ### Backend - Administrator Control Panel
 
+***User Story #32 - As a Site Admin I can login to admin page so that I can manage users access***
+
 Site administrators need a facility to maintain users, posts and comments.
 
 Django administration allows to extend the basic features in the control panel. This has been modified to offer extra functionalities to maintain the blog posts and comment.
@@ -526,6 +590,8 @@ Site superuser account need to be created in order to access to the control pane
 
 **Control Panel - Login Page**
 
+***User Story #14 - As a Site Admin I can login to the site so that I can create, update and delete my posts without restriction***
+
 ![Control-Panel-login](/readme/images/control-panel-login.png)
 
 **Control Panel - Home Page**
@@ -533,6 +599,12 @@ Site superuser account need to be created in order to access to the control pane
 ![Control-Panel-Home-Page](/readme/images/control-panel.png)
 
 #### Blog Posts
+
+***User Story #33 - As a Site Admin I can login to admin page so that I can create, read, update and delete posts***
+
+***User Story #34 - As a Site Admin I can create a new post so that the post can be viewed***
+
+***User Story #35 - As a Site Admin I can disapprove new posts so that I can safeguard users from harmful contents***
 
 This is the section to maintain the posts in the blog application. The standard features in this section allows to Create, Read, Update and Delete posts.
 
@@ -552,6 +624,10 @@ Following are customised features:
 ![control-panel-posts](/readme/images/control-panel-posts.png)
 
 #### Blog Post Comments
+
+***User Story #36 - As a Site Admin I can login to admin page so that I can manage comments***
+
+***User Story #37 - As a Site Admin I can approve or disapprove comments so that I can decide which comment can be published***
 
 This is the section to maintain the comments in the blog application. The standard features in this section allows to Create, Read, Update and Delete comments.
 
@@ -583,15 +659,15 @@ Five user stories were decided not to be included at the initial phase of the pr
 
 The user stories are:
 
-* Reset Password
+* User Story #12 - Reset Password
     * User able to reset forgotten password
-* Filter by Country
+* User Story #23 - Filter by Country
     * User able to filter posts from list of all countries
-* Sort Posts
+* User Story #31 - Sort Posts
     * User able to sort posts by fields such as date and country
-* Contact Form
+* User Story #19 - Contact Form
     * Provide users a contact form
-* Response to Request
+* User Story #20 - Response to Request
     * Initial response to contact form automatically by email
 
 As mentioned in the features section that current User Profiles is only an extension of users from Django table. The intention of the user profiles is to provide additional future features such as user’s photo or avatar, social media accounts and date joined as a member.
