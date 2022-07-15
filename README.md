@@ -1,5 +1,5 @@
 # WorldTravelogue
-WorldTravelogue is a free online travel diary for travellers across the world. It works from internet cafes and computers world wide, to allow you to update an online travel diary and share your experiences, it is free to join and takes just minutes to signup.
+WorldTravelogue is a free online travel diary for travellers across the world. It works from internet cafes and computers worldwide, to allow you to update an online travel diary and share your experiences, it is free to join and takes just minutes to signup.
 On this site the blogs are based on the theme in Travel and is a collection of tools so that travellers can write down a journal and share it to family, friends and other travellers. Photo and link to useful sites about the areas can be added to your blog. Also, comments can be added to the blog by other users so it can help out future travellers to the area.
 
 Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
@@ -11,7 +11,7 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 ---
 ## Table of Contents
 * [Objectives](#objectives)
-    * [Apllication Goal](#application-goals)
+    * [Application Goal](#application-goals)
     * [User Goals](#user-goals)
 * [Application Design](#application-design)
     * [Initial Design](#initial-design)
@@ -67,7 +67,6 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 * [Deployment](#deployment)
     * [Development tools](#development-tools)
     * [Development processes](#development-processes)
-    * [Deployment to Github Pages](#deployment-to-github-pages)
     * [Steps for Setting up basic Django Project and Deploying to Heroku](#steps-for-setting-up-basic-django-project-and-deploying-to-heroku)
 * [Tools](#tools)
 * [Credits](#credits)
@@ -75,9 +74,9 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 
 ---
 ## Objectives
-The main objective of this site is to provide a platform for travelers to keep a journal online and share it with families and friends as well as other travelers.
+The main objective of this site is to provide a platform for travellers to keep a journal online and share it with families and friends as well as other travellers.
 
-The target audients will be travelers who wants to post their journal and people who want to contribute and find out more about the travel destinations.
+The target audients will be travellers who wants to post their journal and people who want to contribute and find out more about the travel destinations.
 
 ### Application Goals
 * Create a community to share travel experiences on destinations across the world.
@@ -135,6 +134,13 @@ There are 37 user stories identified at the beginning of the project and they we
 
 ![Summary of User Stories](readme/user-stories/user-stories-summary.jpg)
 
+**Kanban Board**
+
+In development, Kanban Board was used to schedule the execution of the user stories. This approach allows to allocating user stories by priority and monitoring each user story's progress.
+
+The Kanban board below shows all the user stories were initially in the 'To Do' list column. Then at different stage of the development, each one is moved into 'In Progress' column and finally into 'Done' column when it has completed. All user stories that are not included in this iteration are moved into 'Out of Current Scope' column.
+
+![Kanban Board](readme/user-stories/kanban-board.png)
 
 ### Process Map
 
@@ -638,7 +644,7 @@ Functional testing on this project has been carried out by executing the test sc
 ___
 ## Bugs
 
-During testing, it was noticed that there is an 'Uncaught TypeError' showing in the console log. The error shown below indicates there is a problem with bootstrap. This error seems to be resolved by correcting the version of bootstrap. Futher monitoring is recommended to confirm this bug has been fixed throughout the site.
+During testing, it was noticed that there is an 'Uncaught TypeError' showing in the console log. The error shown below indicates there is a problem with bootstrap. This error seems to be resolved by correcting the version of bootstrap. Further monitoring is recommended to confirm this bug has been fixed throughout the site.
 
 ![bug-error-log-1](/readme/testing/bug-console-log1.jpg)
 
@@ -651,7 +657,7 @@ ___
 
 This is a Django project and deployed in Heroku.
 
-At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running sucessfully in Heroku.
+At the beginning of the project, a simple skeleton Django project was deployed to Heroku to ensure the project is connected and running successfully in Heroku.
 
 The final version of code at each phase of the project is then needs to deploy to Heroku so the site is running the latest version of the project.
 
@@ -673,9 +679,6 @@ The deployed app can be found [here](https://travelogue22kw.herokuapp.com/).
 * Developing your site, save your project in your Gitpod workspaces
 * Use git add command to add files to local repository
 * Use git commit command to commit the changes to local repository
-
-### Deployment to Github Pages
-
 * Use git push to upload local repository content (Gitpod) to a remote repository (Github)
 * The latest code pushed to Github then can be deployed to Heroku
 
