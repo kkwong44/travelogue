@@ -13,10 +13,10 @@
     </header>
     <div class="container">
         <!-- User Profile Form -->
+        <h2 class="h4"><b>Username: {{ user.username }}</b></h2>
         <form method="POST" enctype="multipart/form-data" class="mb-5">
             <fieldset class="form-group">
-                {% csrf_token %}
-                <legend><b>Username: {{ user.username }}</b></legend>
+                {% csrf_token %}              
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">

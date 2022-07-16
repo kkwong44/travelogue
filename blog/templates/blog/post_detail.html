@@ -18,7 +18,7 @@
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     <!-- Default image -->
                     <img src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
-                        alt="" width="100%">
+                        alt="" style="max-width: 100%">
                 </div>
             </div>
         </div>
@@ -32,10 +32,10 @@
                 {% if "placeholder" in post.featured_image.url %}
                     <img class="img-banner"
                         src="https://res.cloudinary.com/kkimages/image/upload/v1655404937/traveloguedefault.jpg"
-                        alt="Defalut Travelogue Image For {{ post.title }}" width="100%">
+                        alt="Defalut Travelogue Image For {{ post.title }}" style="max-width: 100%">
                 {% else %}
                     <img class="img-banner" src=" {{ post.featured_image.url }} "
-                        alt="Travelogue Image For {{ post.title }}" width="100%">
+                        alt="Travelogue Image For {{ post.title }}" style="max-width: 100%">
                 {% endif %}
             </div>
             <div class="col-md-10 card-comment mb-4  mt-3 left  top">
@@ -55,7 +55,6 @@
                     </p>
                     <div class="row">
                         <div class="col-1">
-                            <strong>
                                 <!-- Allow registered users to like or unlike post -->
                                 {% if user.is_authenticated %}
                                     <form class="d-inline" action="{% url 'post_like' post.id %}" method="POST">
@@ -76,7 +75,6 @@
                                 {% endif %}
                                 <!-- Display total number of likes -->
                                 <span class="text-secondary">{{ post.number_of_likes }}</span>
-                            </strong>
                         </div>
                         <div class="col-1">
                             <!-- Display total number of comments -->
