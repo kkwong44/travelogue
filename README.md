@@ -169,7 +169,7 @@ This project has been developed using Python Django, Bootstrap and Deployed in H
 * dj_databases_url - a simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
 * Psycopg2 - PostgreSQL database adapter for the Python programming language
 * Cloudinary - Online platform to store images for this application
-* dj3_cloudinary_storage - django package that facilitates integration with Cloudinary by implementing Django Storage API.
+* dj3_cloudinary_storage - Django package that facilitates integration with Cloudinary by implementing Django Storage API.
 * PostgreSQL - an open source object-relational database system
 * Django summernote - is a simple WYSIWYG editor
 * Django countries - an application that provides country choices for use with forms, flag icons static files, and a country field for models.
@@ -186,7 +186,7 @@ ___
 
 The aim of this site is to create a community to share travel experiences and let other potential visitors to find more information about the destinations.
 
-In order to meet the aim and allow the community to grow. There are no restriction to visit the site but different access rights will be set to different user groups. The user groups have been defined into 3 different types for this site.
+In order to meet the aim and allow the community to grow. There are no restrictions to visit the site but different access rights will be set to different user groups. The user groups have been defined into 3 different types for this site.
 
 1. **Non-registered users**
     * Only allow to view posts and comments
@@ -683,6 +683,46 @@ Another feature is to create an image gallery so viewer can view all images by a
 ___
 ## Validator Testing
 
+Validator testing is used to validate codes that are legally written and to identify any possible errors. This can be done by using online automated testing tools to scan through the codes. The tools used for this project are
+
+W3C Markup Validation Service to validate HTML - https://validator.w3.org/
+W3C CSS Validation Service to validate CSS - https://jigsaw.w3.org/css-validator/
+
+The source code can be copied and paste directly into the validator to perform the test. A report will be generated with the test results where it identified the errors. The validator will show passed when the code is free of error.
+
+### Validation Reports
+
+**HTML Validation Reports**
+
+20 pages of html were tested and no error was found. Each test report can be viewed by clicking one of the links below.
+
+* [Home Page without Signing In](readme/testing/w3c-validations/01-home-page.png)
+* [About Page](readme/testing/w3c-validations/02-about-page.png)
+* [Sign Up Page](readme/testing/w3c-validations/03-sign-up.png)
+* [Sign In Page](readme/testing/w3c-validations/04-sign-in.png)
+* [Contact us Page](readme/testing/w3c-validations/05-contact-us-page.png)
+* [Post's Detail Page without Signing In](readme/testing/w3c-validations/06-post-detail.png)
+* [Posts Filtered By Country](readme/testing/w3c-validations/07-filter-by-country.png)
+* [Posts Filtered By Authors](readme/testing/w3c-validations/08-filter-by-author.png)
+* [Home Page - Signed In](readme/testing/w3c-validations/09-home-signed-in.png)
+* [Create New Post](readme/testing/w3c-validations/10-new-post.png)
+* [View/Edit User Profile](readme/testing/w3c-validations/11-user-profile.png)
+* [Change User Password](readme/testing/w3c-validations/12-change-password.png)
+* [Delete User Account](readme/testing/w3c-validations/13-delete-account.png)
+* [Post's Detail - Signed In](readme/testing/w3c-validations/14-post-detail-signed-in.png)
+* [Post's Detail with Add Another Comment](readme/testing/w3c-validations/15-post-detail-additional-comment.png)
+* [Owner's Detail Post](readme/testing/w3c-validations/16-owner-post-detail.png)
+* [Edit Owner Post](readme/testing/w3c-validations/17-edit-owner-post.png)
+* [Delete Owner Post](readme/testing/w3c-validations/18-delete-owner-post.png)
+* [Sign Out Page](readme/testing/w3c-validations/19-sign-out.png)
+* [Home Page for Administrator](readme/testing/w3c-validations/20-home-admin.png)
+
+**CSS Validation Report**
+
+The customised CSS file was tested and no error was found.
+
+![CSS Validation Report](readme/testing/w3c-validations/css-validator.png)
+
 *[Back to Contents](#table-of-contents)*
 
 ___
@@ -801,6 +841,7 @@ ___
 * [W3Schools](https://www.w3schools.com/python/default.asp) for research, examples and techniques in Python programming
 * [Bootstrap](https://getbootstrap.com)
 * [Bootstrap Templates](https://startbootstrap.com)
+* [Django Documentation](https://docs.djangoproject.com/en/4.0/)
 * [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
 * [Django Filter And Pagination - Youtube by TauhidCodes](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s)
 * Code Institute Full Stack Framework tutorials
