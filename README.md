@@ -64,6 +64,8 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
         * [User Profiles](#user-profiles)
 * [Future Features](#future-features)
 * [Validator Testing](#validator-testing)
+    * [Validation Reports](#validation-reports)
+* [Performance and Accessibility Testing](#performance-and-accessibility-testing)
 * [Testing](#testing)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
@@ -722,6 +724,23 @@ The source code can be copied and paste directly into the validator to perform t
 The customised CSS file was tested and no error was found.
 
 ![CSS Validation Report](readme/testing/w3c-validations/css-validator.png)
+
+*[Back to Contents](#table-of-contents)*
+
+___
+### Performance and Accessibility Testing
+
+Lighthouse is a tool in Chrome Development Tools that allows developer to test their website. Performance and Accessibility are two of the tests carried out by Lighthouse and it can identify where you can improve the performance and accessibility.
+
+The 2 main pages of this site have been tested with lighthouse and it shows the site perform well.
+
+**Lighthouse Report for Home Page**
+
+![Light House Report Home Page](readme/testing/lighthouse-home-page.jpg)
+
+**Lighthouse Report for Post's Detail Page**
+
+![Light House Report Post Detail Page](readme/testing/lighthouse-post-detail-page.jpg)
 
 *[Back to Contents](#table-of-contents)*
 
