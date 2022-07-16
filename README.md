@@ -688,6 +688,7 @@ ___
 Validator testing is used to validate codes that are legally written and to identify any possible errors. This can be done by using online automated testing tools to scan through the codes. The tools used for this project are
 
 W3C Markup Validation Service to validate HTML - https://validator.w3.org/
+
 W3C CSS Validation Service to validate CSS - https://jigsaw.w3.org/css-validator/
 
 The source code can be copied and paste directly into the validator to perform the test. A report will be generated with the test results where it identified the errors. The validator will show passed when the code is free of error.
@@ -734,11 +735,11 @@ Lighthouse is a tool in Chrome Development Tools that allows developer to test t
 
 The 2 main pages of this site have been tested with lighthouse and it shows the site perform well.
 
-**Lighthouse Report for Home Page**
+***Lighthouse Report for Home Page***
 
 ![Light House Report Home Page](readme/testing/lighthouse-home-page.jpg)
 
-**Lighthouse Report for Post's Detail Page**
+***Lighthouse Report for Post's Detail Page***
 
 ![Light House Report Post Detail Page](readme/testing/lighthouse-post-detail-page.jpg)
 
