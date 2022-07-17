@@ -659,7 +659,15 @@ This is the section to maintain the user profiles in the travelogue project. For
 ___
 ## Future Features
 
-Five user stories were decided not to be included at the initial phase of the project. These can be implemented in the next milestone.
+Although responsive tests were performed as expected but it was noticed that the side widgets were rearranged to the bottom of the page for mobile devices and can be obscured from the users. This can cause confusion and inconvenience when users want to reset the filter after the posts were filtered from a post’s country or author. Future developments should be considered to improve this feature.
+
+As mentioned in the features section that current User Profiles is only an extension of users from Django table. The intention of the user profiles is to provide additional future features such as user’s photo or avatar, social media accounts and date joined as a member.
+
+The site can greatly improve by allowing multiple images to upload and display in a post.
+
+Another feature is to create an image gallery so viewer can view all images by an author or a country.
+
+Also, five user stories were decided not to be included at the initial phase of the project. These can be implemented in the next milestone.
 
 The user stories are:
 
@@ -674,12 +682,6 @@ The user stories are:
 * [User Story #20 - Response to Request](readme/user-stories/user-stories-20.jpg)
     * Initial response to contact form automatically by email
 
-As mentioned in the features section that current User Profiles is only an extension of users from Django table. The intention of the user profiles is to provide additional future features such as user’s photo or avatar, social media accounts and date joined as a member.
-
-The site can greatly improve by allowing multiple images to upload and display in a post.
-
-Another feature is to create an image gallery so viewer can view all images by an author or a country.
-
 *[Back to Contents](#table-of-contents)*
 
 ___
@@ -687,9 +689,9 @@ ___
 
 Validator testing is used to validate codes that are legally written and to identify any possible errors. This can be done by using online automated testing tools to scan through the codes. The tools used for this project are
 
-W3C Markup Validation Service to validate HTML - https://validator.w3.org/
+* W3C Markup Validation Service to validate HTML - https://validator.w3.org/
 
-W3C CSS Validation Service to validate CSS - https://jigsaw.w3.org/css-validator/
+* W3C CSS Validation Service to validate CSS - https://jigsaw.w3.org/css-validator/
 
 The source code can be copied and paste directly into the validator to perform the test. A report will be generated with the test results where it identified the errors. The validator will show passed when the code is free of error.
 
