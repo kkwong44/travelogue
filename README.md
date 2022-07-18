@@ -66,6 +66,7 @@ Click [here](https://travelogue22kw.herokuapp.com/) to access live site.
 * [Validator Testing](#validator-testing)
     * [Validation Reports](#validation-reports)
 * [Performance and Accessibility Testing](#performance-and-accessibility-testing)
+* [PEP8 Online Checker](#pep8-online-checker)
 * [Testing](#testing)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
@@ -748,6 +749,29 @@ The 2 main pages of this site have been tested with lighthouse and it shows the 
 *[Back to Contents](#table-of-contents)*
 
 ___
+
+### PEP8 Online Checker
+
+pep8 is a tool to check Python code against some of the style conventions in PEP 8.
+
+The following py files have been checked and they all passed the check. Click links to see individual test results.
+
+* Blog App
+    * [admin.py](readme/testing/pep8/blog-admin.png)
+    * [forms.py](readme/testing/pep8/blog-forms.png)
+    * [models.py](readme/testing/pep8/blog-models.png)
+    * [views.py](readme/testing/pep8/blog-views.png)
+    * [urls.py](readme/testing/pep8/blog-urls.png)
+    * [test_urls.py](readme/testing/pep8/blog-test-urls.png)
+
+* profiles app
+    * [admin.py](readme/testing/pep8/profiles-admin.png)
+    * [forms.py](readme/testing/pep8/blog-forms.png)
+    * [models.py](readme/testing/pep8/profiles-models.png)
+    * [views.py](readme/testing/pep8/profiles-views.png)
+    * [urls.py](readme/testing/pep8/profiles-urls.png)
+
+___
 ## Testing
 
 For this project, tests have been carried out using both Django Unit Tests and Manual Tests.
@@ -859,14 +883,15 @@ The tools used to carry out the development and deployment on this project are:
 ___
 ## Credits
 
-* [Template](https://github.com/Code-Institute-Org/gitpod-full-template) created by [Code Institute](https://codeinstitute.net/)
-* [W3Schools](https://www.w3schools.com/python/default.asp) for research, examples and techniques in Python programming
-* [Bootstrap](https://getbootstrap.com)
-* [Bootstrap Templates](https://startbootstrap.com)
-* [Django Documentation](https://docs.djangoproject.com/en/4.0/)
-* [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1)
-* [Django Filter And Pagination - Youtube by TauhidCodes](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s)
-* Code Institute Full Stack Framework tutorials
+* This project was inspired and adapted from Code Institute Django Blog project
+* [Template](https://github.com/Code-Institute-Org/gitpod-full-template) - created by Code Institute
+* [W3Schools](https://www.w3schools.com/python/default.asp) - for research, examples and techniques in Python programming
+* [Bootstrap](https://getbootstrap.com) - is a free and open source front end development framework for the creation of websites and web apps
+* [Bootstrap Templates](https://startbootstrap.com) - this project is based on the template for blog home
+* [Django Documentation](https://docs.djangoproject.com/en/4.0/) - for research and instructions
+* [Django Testing Tutorial - Youtube By The Dumbfounds](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM&index=1) - for automated testing
+* [Django Filter And Pagination - Youtube by TauhidCodes](https://www.youtube.com/watch?v=dkJ3uqkdCcY&t=1138s) - for implement filter and pagination
+* [Code Institute](https://codeinstitute.net/) - Full Stack Framework tutorials
 
 *[Back to Contents](#table-of-contents)*
 
