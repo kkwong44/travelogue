@@ -121,6 +121,11 @@ The following are initial wireframe designs to meet the main objective.
 
 ### Database Design
 
+The models of the database design have been adapted and modified from the Code Institute Django Blog project.
+
+* UUID has been used instead of Slug field as post id
+* Django Country field has been added to the posts model
+
 ![Database Design](readme/images/database-models.jpg)
 
 ### Design Approach
